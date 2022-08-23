@@ -1,0 +1,37 @@
+form{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: solid 0.5px rgba(128, 128, 128, 0.199);
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+    margin: 50px auto;
+    background-color: rgba(128, 128, 128, 0.144);
+    box-shadow: -10px 2px 30px 5px rgba(128, 128, 128, 0.39);
+}
+.titleForm{
+    font-size: 25px;
+    font-weight: bold;
+    color:  rgb(76, 31, 117);
+}
+label{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.inputForm{
+    border: solid 0.5px rgba(128, 128, 128, 0.363);
+    border-radius: 5px;
+    margin: 5px;
+    height: 25px;
+}
+.sendForm{
+    border: solid 0.5px rgba(128, 128, 128, 0.363);
+    border-radius: 20px;
+    margin: 5px;
+    height: 25px;
+    background-color: rgb(76, 31, 117);
+    color: white;
+    text-decoration: none;
+    padding: 4px;
+}
+
