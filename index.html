@@ -267,9 +267,8 @@ $("#guardo").on("click", function(e) {
     e.preventDefault();
     $.ajax({type: "POST",
         url: "http://181.13.244.170:5000/insert",
-        data: { id: $(this).val(), access_token: $("#access_token").val() },
+        data: { id: "123", access_token: $("#access_token").val() },
         success:function(result) {
-          alert('ok');
           $('#reserva').modal('toggle');
         },
         error:function(result) {
