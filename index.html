@@ -266,7 +266,7 @@
 $("#guardo").on("click", function(e) {
     e.preventDefault();
     $.ajax({type: "POST",
-        url: "/pages/test/",
+        url: "http://181.13.244.170:5005/insert",
         data: { id: $(this).val(), access_token: $("#access_token").val() },
         success:function(result) {
           alert('ok');
