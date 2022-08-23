@@ -179,7 +179,7 @@
                     </div>
               <div class="form-group">
                         <label >Tecnologías que sabe el candidato</label>
-            <multi-input>
+            <multi-input id="minput">
                <input list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
               <datalist id="tcandi">
                    <option>.NET</option>
@@ -215,7 +215,7 @@
           <div class="form-group">
 
                         <label >Tipo de perfil del Candidato</label>
-            <multi-input>
+            <multi-input id="tinput">
                 <input list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
               <datalist id="tperfil">
                   <option>Analista Funcional</option>
@@ -265,10 +265,29 @@
 
 $("#guardo").on("click", function(e) {
     e.preventDefault();
+    multiinput= Array();
+    valores=document.querySelector('#minput').querySelectorAll(".item")
+    for ( var i = 0, l = valores.length; i < l; i++ ) {
+    multiinput.push(valores[i].textContent);
+    }
+    tperfil=Array();
+    valoresperfil=document.querySelector('#tinput').querySelectorAll(".item")
+    for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+    tperfil.push(valoresperfil[i].textContent);
+    }
     $.ajax({type: "POST",
         url: "http://181.13.244.170:5000/insert",
-        data: { email: $("#email").val(), emailCandidato: $("#emailCandidato").val() },
-	success:function(result) {
+	data: { 
+          email: $("#email").val(), 
+          emailCandidato: $("#emailCandidato").val(),
+          naCandi: $("#naCandi").val(),
+          lkCandi: $("#lkCandi").val(),
+          idReserva: $("#idReserva").val(),
+          tcandi: multiinput,
+          tperfil: tperfil,
+          comment: $("#comment").val(),
+       },
+	    success:function(result) {
           $('#reserva').modal('toggle');
         },
         error:function(result) {
