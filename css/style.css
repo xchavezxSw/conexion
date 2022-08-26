@@ -75,6 +75,23 @@ form{
 .cierro:hover, .guardo:hover{
     transform: scale(1.1);
 }
+.bodyBusquedas{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+.contenedorTabla{
+    padding: 10px;
+    margin-top: 90px;
+}
+.tablaBusquedas{
+    border-radius: 10px;
+    background-color:#221969f7;
+    color: white;
+    font-weight:bold ;
+    text-align: center;
+}
+
 
 
 @media(max-width:478px){
