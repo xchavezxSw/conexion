@@ -59,19 +59,6 @@ body {
 }
 
 
-/* Bootstrap sidebar Toggle */
-
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-    padding-left: 50px;
-}
 
 
 /* Bootstrap sidebar styles */
@@ -986,3 +973,4 @@ ul.in li {
 }
 
 .icon-big{font-size: 40px;}
+

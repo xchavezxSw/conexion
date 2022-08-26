@@ -1,37 +1,94 @@
+.body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #221969;
+}
 form{
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    border: solid 0.5px rgba(128, 128, 128, 0.199);
+    border:solid 0.2px white;
     width: 400px;
+    height: 320px;
     padding: 10px;
     text-align: center;
     margin: 50px auto;
-    background-color: rgba(128, 128, 128, 0.144);
-    box-shadow: -10px 2px 30px 5px rgba(128, 128, 128, 0.39);
+    background-color: rgb(253, 251, 246);
+    box-shadow: -1px 1px 10px 3px  white;
 }
 .titleForm{
-    font-size: 25px;
+    font-size: 35px;
     font-weight: bold;
-    color:  rgb(76, 31, 117);
+    color: #221969;
 }
-label{
-    font-size: 15px;
+.labelForm{
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
+    color:  #221969;
+    font-weight: bold;
 }
 .inputForm{
-    border: solid 0.5px rgba(128, 128, 128, 0.363);
-    border-radius: 5px;
-    margin: 5px;
-    height: 25px;
-}
-.sendForm{
-    border: solid 0.5px rgba(128, 128, 128, 0.363);
+    font-size: 20px;
+    padding: 5px;
+    border: solid 0.5px rgba(175, 165, 165, 0.363);
     border-radius: 20px;
     margin: 5px;
     height: 25px;
-    background-color: rgb(76, 31, 117);
+    background-color:rgba(75, 31, 117, 0.212) ;
+}
+.sendForm{
+    font-size: 18px;
+    border: solid 0.5px rgba(128, 128, 128, 0.363);
+    border-radius: 20px;
+    margin-top: 8px;
+    height: 35px;
+    background-color:#221969;
     color: white;
     text-decoration: none;
     padding: 4px;
+    cursor: pointer;
+    width: 100px;
+}
+.sendForm:hover{
+    transform: scale(1.1);
+    background-color:rgba(207, 42, 185, 0.678);
+}
+.classlogo{
+    padding:10px ;
 }
 
+.cierro{
+    background-color: rgba(255, 0, 0, 0.849);
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;    
+}
+.guardo{
+    margin-left: 5px;
+    font-size: 15px;
+    background-color: rgba(0, 128, 0, 0.884);
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.cierro:hover, .guardo:hover{
+    transform: scale(1.1);
+}
+
+
+@media(max-width:478px){
+    form{
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border:solid 0.2px white;
+        width: 280px;
+        height: 315px;
+        padding: 10px;
+        text-align: center;
+        margin: 50px auto;
+        background-color: rgb(253, 251, 246);
+        box-shadow: -1px 1px 10px 3px  white;
+    }
+    
+}
