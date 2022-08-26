@@ -169,7 +169,7 @@
                     </div>
          <div class="form-group">
                         <label >Linkedin del Candidato</label>
-                        <input type="lkCandi" class="form-control" id="lkCandi" placeholder="Escribe el Linkedin del Candidato">
+                        <input type="url" name="sitioweb" pattern=".+\.com" class="form-control" id="lkCandi" placeholder="Escribe el Linkedin del Candidato">
                         <small id="lkCandiHelp" class="form-text text-muted">Escribe el Linkedin del Candidato</small>
                     </div>
            <div class="form-group">
@@ -264,6 +264,11 @@
 <script>
 
 $("#guardo").on("click", function(e) {
+ 
+var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val() ))
+{
+$('#reserva').modal('toggle');
     e.preventDefault();
     multiinput= Array();
     valores=document.querySelector('#minput').querySelectorAll(".item")
@@ -287,15 +292,37 @@ $("#guardo").on("click", function(e) {
           tperfil: tperfil,
           comment: $("#comment").val(),
        },
+	     async: false,
 	    success:function(result) {
-          $('#reserva').modal('toggle');
-        },
+		    $("#email").textContent='';
+		    $("#emailCandidato").textContent='';
+		    $("#naCandi").textContent='';
+		    $("#lkCandi").textContent='';
+		    $("#idReserva").textContent='';
+		    $("#comment").textContent='';
+    valores=document.querySelector('#minput').querySelectorAll(".item");
+    for ( var i = 0, l = valores.length; i < l; i++ ) {
+	valores[i].remove();	     
+    }
+    valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
+    for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+    valoresperfil[i].remove();
+    }
+	    
+	    },
         error:function(result) {
           alert('error');
 
         }
-    });
-});
+    }
+    );
+}
+else{
+	if ( $("#email").val()!= "")
+		alert("El formato del mail es incorrecto");
+}
+}
+);
 </script>
 
 
