@@ -207,6 +207,43 @@
 </script>
 <script src="./js/login.js"></script>
 <script>
+ var anterior="";
+ $("#emailCandidato").focusout(function() {
+     if (anterior=="" && $("#emailCandidato").val() != "")
+     {
+            $.ajax({type: "POST",
+                    url: "http://181.13.244.170:5000/Getreservas",
+                    data: {
+                            emailCandidato: $("#emailCandidato").val()
+                          },
+                    success:function(data) {
+                        $("#email").val(data['Email Address'])
+                        },
+                    error:function(result) {
+                        alert('error');
+                       }
+                    })
+      }
+ $("#emailCandidato").change(function() {
+    actual=$("#emailCandidato").val();
+    if (anterior != actual)
+       {
+        anterior=actual;
+        $.ajax({type: "POST",
+                url: "http://181.13.244.170:5000/Getreservas",
+	            data: {
+                    emailCandidato: $("#emailCandidato").val()
+                      },
+	            success:function(data) {
+	                 $("#email").val(data['Email Address'])
+                },
+                error:function(result) {
+                     alert('error');
+                }
+              })
+        }
+    })
+  })
 
 var anterior="";
  $("#emailCandidato").focusout(function() {
@@ -251,7 +288,7 @@ var anterior="";
   })
 
 $("#guardo").on("click", function(e) {
- 
+
 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val() ))
 {
@@ -289,13 +326,13 @@ $('#reserva').modal('toggle');
 		    $("#comment").textContent='';
     valores=document.querySelector('#minput').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
-	valores[i].remove();	     
+	valores[i].remove();
     }
     valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
-	    
+
 	    },
         error:function(result) {
           alert('error');
