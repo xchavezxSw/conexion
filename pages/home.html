@@ -157,7 +157,6 @@
     </multi-input>
                     </div>
           <div class="form-group">
-
                         <label >Tipo de perfil del Candidato</label>
             <multi-input id="tinput">
                 <input list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
@@ -230,30 +229,35 @@
                     </div>
          <div class="form-group">
                         <label >¿Es Sourcer?</label><br>
-                        <input type="radio" name="sourcer" id="sourcer"> Si
-                        <input type="radio" name="sourcer" id="sourcer"> No
+                        <input type="radio" name="sourcer" id="sourcer" value="si"> Si
+                        <input type="radio" name="sourcer" id="sourcer" value="no"> No
                     </div>
+                    <div class="form-group">
+                      <label >ID</label>
+                      <input id="idReserva" type="idReserva" class="form-control" placeholder="IDs a Enviar a Cliente separados con '_' y sin la palabra 'ID' y sin espacios">
+                      <small class="form-text text-muted">IDs a Enviar a Cliente separados con '_' y sin la palabra 'ID' y sin espacios</small>
+                  </div>
            <div class="form-group">
                         <label >Remuneración mensual pretendida</label>
-                        <input  type="number" id="remuneracionPretendida" class="form-control"  placeholder="$">
+                        <input  type="number" id="remuneracionPretendida" class="form-control"  placeholder="$100000">
                     </div>
               <div class="form-group">
                         <label >Nivel de Inglés</label><br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 1- No se conoce (puede o no hablar). <br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 2- No habla Inglés. <br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 3- Nivel A1. <br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 4- Nivel A2.<br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 5- Nivel B1.<br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 6- Nivel B2.<br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 7- Nivel C1.<br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 8- Nivel C2.<br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 9- Nivel bilingüe.<br>
-                        <input type="radio" name="ingles" id="nivelIngles"> 10- Nivel nativo.
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles1" > 1- No se conoce (puede o no hablar). <br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles2" > 2- No habla Inglés. <br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles3" > 3- Nivel A1. <br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles4" > 4- Nivel A2.<br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles5" > 5- Nivel B1.<br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles6" > 6- Nivel B2.<br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles7" > 7- Nivel C1.<br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles8" > 8- Nivel C2.<br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles9" > 9- Nivel bilingüe.<br>
+                        <input type="radio" name="ingles" id="nivelIngles" value="nivelIngles10" > 10- Nivel nativo.
                     </div>
           <div class="form-group">
 
                         <label >Locación</label>
-                        <input type="text" multiple name="locacion" id="locacion" list="places" required size="64">
+                        <input type="text" placeholder="Argentina" multiple name="locacion" id="locacion" list="places" class="form-control" >
                         <datalist id="places">
                           <option >No se sabe / No se conoce</option>
                           <option > Afganistán</option>
@@ -452,21 +456,98 @@
                           <option>Zimbabue</option>
                         </datalist>
                     </div>
+                    <div class="form-group">
+                      <label >Linkedin del Candidato</label>
+                      <input type="url" name="sitioweb" pattern=".+\.com" class="form-control" id="lkCandi" placeholder="Escribe el Linkedin del Candidato">
+                      <small id="lkCandiHelp" class="form-text text-muted">Escribe el Linkedin del Candidato</small>
+                  </div>
+                  <div class="form-group">
+                    <label >Tecnologías que sabe el candidato</label>
+        <multi-input id="minput">
+           <input list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
+          <datalist id="tcandi">
+               <option>.NET</option>
+                <option>Android</option>
+                <option>AWS</option>
+                <option>C#</option>
+                <option>C++</option>
+                <option>GCP</option>
+                <option>GO</option>
+                <option>HTML</option>
+                <option>IONIC</option>
+                <option>iOS</option>
+                <option>Java</option>
+                <option>JavaScript (FE y BE)</option>
+                <option>Kotlin</option>
+                <option>Kubernetes</option>
+                <option>Objective C</option>
+                <option>Perl</option>
+                <option>PHP</option>
+                <option>Python</option>
+                <option>R</option>
+                <option>React Native</option>
+                <option>Ruby</option>
+                <option>Scala</option>
+                <option>SQL</option>
+                <option>Swift</option>
+                <option>WEB3</option>
+                <option>Xamarin</option>
+                <option>Other…</option>
+          </datalist>
+</multi-input>
+                </div>
+                <div class="form-group">
+                  <label >Tipo de perfil del Candidato</label>
+      <multi-input id="tinput">
+          <input list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
+        <datalist id="tperfil">
+            <option>Analista Funcional</option>
+            <option>Arquitecto</option>
+            <option>BA</option>
+            <option>BI</option>
+            <option>Blockchain Developer</option>
+            <option>Data Analyst</option>
+            <option>Data Architect</option>
+            <option>Data Engineer</option>
+            <option>Data Science</option>
+            <option>Developer Mobile</option>
+            <option>DevOps</option>
+            <option>ETL</option>
+            <option>Infraestructura</option>
+            <option>Lider Tecnico</option>
+            <option>Machine Learning</option>
+            <option>Mulesoft / Salesforce</option>
+            <option>QA Automation</option>
+            <option>QA Manual</option>
+            <option>QC</option>
+            <option>UI</option>
+            <option>UX</option>
+            <option>UXUI</option>
+            <option>Web Developer</option>
+            <option>Otro</option>
+        </datalist>
+</multi-input>
+              </div>
+              <div class="form-group">
+                <label >Comentarios Adicionales</label>
+                <input type="comment" class="form-control" id="comment" placeholder="Comentarios Adicionales">
+                <small id="commentHelp" class="form-text text-muted"Comentarios Adicionales></small>
+            </div>
               <div class="form-group">
                         <label >CV Español Candidato</label>
-                        <input type="file" id="cvesp">
+                        <input class="form-control" type="file" id="cvesp">
                     </div>
                     <div class="form-group">
                       <label >Informe de Entrevista Español Candidato</label><br>
-                      <input   class="form-text text-muted" style="width: 100%;" type="text" id="informeEntEsp" placeholder="Informe entrevista Español">
+                      <input   class="form-control" style="width: 100%;" type="text" id="informeEntEsp" placeholder="Informe entrevista Español">
                   </div>
                   <div class="form-group">
                     <label >CV Inglés Candidato</label>
-                    <input type="file" id="cving">
+                    <input type="file" id="cving" class="form-control">
                 </div>
                 <div class="form-group">
                   <label >Informe de Entrevista Inglés Candidato</label><br>
-                  <input   class="form-text text-muted" style="width: 100%;" type="text" id="informeEntIn" placeholder="Informe entrevista Inglés">
+                  <input   class="form-control" style="width: 100%;" type="text" id="informeEntIn" placeholder="Informe entrevista Inglés">
               </div>
                 </div>
       <div class="modal-footer">
@@ -498,7 +579,7 @@ var anterior="";
                         $("#email").val(data['Email Address'])
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
-	                      $("#idReserva").val(data['IDs de reserva separdos con \"_\" sin la palabra \"ID\""'])
+	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
 	                      $("#tcandi").val(data['Tecnolog\u00edas que sabe el candidato'])
 	                      $("#tperfil").val(data['Tipo de perfil del Candidato'])
 	                      $("#comment").val(data['Comentarios adicionales'])
@@ -526,7 +607,7 @@ var anterior="";
                         $("#email").val(data['Email Address'])
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
-	                      $("#idReserva").val(data['IDs de reserva separdos con \"_\" sin la palabra \"ID\""'])
+	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
 	                      $("#tcandi").val(data['Tecnolog\u00edas que sabe el candidato'])
 	                      $("#tperfil").val(data['Tipo de perfil del Candidato'])
 	                      $("#comment").val(data['Comentarios adicionales'])
