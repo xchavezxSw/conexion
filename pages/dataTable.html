@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexion | Búsquedas</title>
+    <link rel="shortcut icon" href="https://conexion-hr.com/wp-content/uploads/2022/04/conexion-hr-favicon.png" sizes="32x32">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link href="../css/bootstrap-sidebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+</head>
+<body class="bodyBusquedas">
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="navbar-header">
+              <a href="./home.html"><img class="logo" src="https://conexion-hr.com/wp-content/uploads/2022/01/conexion-hr-w-bb-300x47.png" alt="logo"></a>
+            </div>
+              <ul class="buttonOff">
+                <li class="dropdown singOffAndButtonOff">
+                   <a class="singOff" href="./index.html"><span class="glyphicon glyphicon-off" style="color: white;" aria-hidden="true"></span></a>
+                </li>
+              </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedorTabla">
+            <table id="table_id" class="display tablaBusquedas">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; background-color:#221969f7;" >Column 1</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Column 2</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Column 2</th>
+                    </tr>
+                </thead>
+                <tbody style="background-color:#30286efa;">
+                    <tr>
+                        <td>Row 1 Data 1</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2 Data 1</td>
+                        <td>Row 2 Data 2</td>
+                        <td>Row 2 Data 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script>
+    $(document).ready( function () {
+        $('#table_id').DataTable({
+      "ajax": {
+        "url": "http://181.13.244.170:5000/busquedas",
+        dataSrc: '',
+        columns: [
+    { "data": "Prioridad" },
+    { "data": "Busqueda" },
+    { "data": "Busqueda" }
+    ]
+      }
+    
+    } )
+    } );
+    </script>
+</body>
+</html>
