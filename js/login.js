@@ -3,7 +3,7 @@ function login(){
     let password = document.getElementById('password').value
     
     if(user=='admin' && password=='admin'){
-        location.href= "home.html";
+        location.href= "./pages/home.html";
     }else{
         Swal.fire({
             icon: 'error',
