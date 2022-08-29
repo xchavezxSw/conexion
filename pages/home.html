@@ -362,7 +362,10 @@ var anterior="";
 	            data: {
                     emailCandidato: $("#emailCandidato").val()
                       },
-	            success:function(data) {
+                      success:function(data) {
+                      if (data.hasOwnProperty("datos")){
+                        return false
+                      }else{
                         $("#email").val(data['Email Address'])
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
@@ -370,7 +373,8 @@ var anterior="";
 	                      $("#tcandi").val(data['Tecnolog\u00edas que sabe el candidato'])
 	                      $("#tperfil").val(data['Tipo de perfil del Candidato'])
 	                      $("#comment").val(data['Comentarios adicionales'])
-                },
+                      }
+                    },
                 error:function(result) {
                      alert('error');
                 }
