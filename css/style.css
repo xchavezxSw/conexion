@@ -98,12 +98,10 @@
     font-weight:bold ;
     text-align: center;
 }
-.busqTit{
-    background-color: #221969;
-    color: white;
-    padding: 5px;
+.bodyHome{
+    padding: 0;
+    margin: 0;
 }
-
 
 @media(max-width:478px){
     form{
