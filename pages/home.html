@@ -464,7 +464,7 @@
                   <div class="form-group">
                     <label >Tecnologías que sabe el candidato</label>
         <multi-input id="minput">
-           <input list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
+           <input id="tTecCandi" list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
           <datalist id="tcandi">
                <option>.NET</option>
                 <option>Android</option>
@@ -574,13 +574,23 @@ var anterior="";
                     success:function(data) {
                       if (data.hasOwnProperty("datos")){
                         return false
-                      }else{console.log()
+                      }else{
                         $("#email").val(data['Email Address'])
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
 	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
-	                      $("#tcandiInput").val(data['Tecnologías que sabe el candidato'])
-	                      $("#tperfilInput").val(data['Tipo de perfil del Candidato'])
+	                      valor=data['Tecnologías que sabe el candidato'].split(',')
+                        var i;
+                        for (i = 0; i < valor.length; ++i) {
+                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tcandiInput");
+                        }
+	                    valor=data['Tipo de perfil del Candidato'].split(',')
+                        var i;
+                        for (i = 0; i < valor.length; ++i) {
+                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tperfilInput");
+                        }
+
+
 	                      $("#comment").val(data['Comentarios adicionales'])
                       }
                         },
@@ -607,8 +617,18 @@ var anterior="";
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
 	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
-	                      $("#tcandiInput").val(data['Tecnologías que sabe el candidato'])
-	                      $("#tperfilInput").val(data['Tipo de perfil del Candidato'])
+	                               valor=data['Tecnologías que sabe el candidato'].split(',')
+                        var i;
+                        for (i = 0; i < valor.length; ++i) {
+                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tcandiInput");
+                        }
+	                    valor=data['Tipo de perfil del Candidato'].split(',')
+                        var i;
+                        for (i = 0; i < valor.length; ++i) {
+                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tperfilInput");
+                        }
+
+
 	                      $("#comment").val(data['Comentarios adicionales'])
                       }
                     },
