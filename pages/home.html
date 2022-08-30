@@ -124,7 +124,7 @@
               <div class="form-group">
                         <label >Tecnologías que sabe el candidato</label>
             <multi-input id="minput">
-               <input list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
+               <input id="tcandiInput" list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
               <datalist id="tcandi">
                    <option>.NET</option>
                     <option>Android</option>
@@ -159,7 +159,7 @@
           <div class="form-group">
                         <label >Tipo de perfil del Candidato</label>
             <multi-input id="tinput">
-                <input list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
+                <input id="tperfilInput" list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
               <datalist id="tperfil">
                   <option>Analista Funcional</option>
                   <option>Arquitecto</option>
@@ -499,7 +499,7 @@
                 <div class="form-group">
                   <label >Tipo de perfil del Candidato</label>
       <multi-input id="tinput">
-          <input list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
+          <input id="tperfilInput" list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
         <datalist id="tperfil">
             <option>Analista Funcional</option>
             <option>Arquitecto</option>
@@ -574,13 +574,13 @@ var anterior="";
                     success:function(data) {
                       if (data.hasOwnProperty("datos")){
                         return false
-                      }else{
+                      }else{console.log()
                         $("#email").val(data['Email Address'])
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
 	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
-	                      $("#tcandi").val(data['Tecnolog\u00edas que sabe el candidato'])
-	                      $("#tperfil").val(data['Tipo de perfil del Candidato'])
+	                      $("#tcandiInput").val(data['Tecnologías que sabe el candidato'])
+	                      $("#tperfilInput").val(data['Tipo de perfil del Candidato'])
 	                      $("#comment").val(data['Comentarios adicionales'])
                       }
                         },
@@ -607,8 +607,8 @@ var anterior="";
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
 	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
-	                      $("#tcandi").val(data['Tecnolog\u00edas que sabe el candidato'])
-	                      $("#tperfil").val(data['Tipo de perfil del Candidato'])
+	                      $("#tcandiInput").val(data['Tecnologías que sabe el candidato'])
+	                      $("#tperfilInput").val(data['Tipo de perfil del Candidato'])
 	                      $("#comment").val(data['Comentarios adicionales'])
                       }
                     },
