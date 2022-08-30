@@ -92,17 +92,9 @@
   </div>
   
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
     <div class="carousel-inner" id="listadoBusquedas">
-      <div class="carousel-item">
-        <h2>chau</h2>
-      </div>
-      <div class="carousel-item">
-        <h2>como va</h2>
+      <h3 class="h3busq">Búsquedas de alta prioridad</h3>
+      <div>
       </div>
     </div>
   </div>
@@ -111,6 +103,7 @@
 <script>
 
   const listadoBusquedas = document.getElementById('listadoBusquedas')
+  let i = 0
 
   fetch('http://181.13.244.170:5000/busquedasPrioritarias')
         .then( (resp) => resp.json())
@@ -118,8 +111,12 @@
           data.forEach((post)=>{
             const div = document.createElement('div');
             div.classList.add('carousel-item')
-            div.classList.add('active')
+            if (i==0){
+                div.classList.add('active');
+                i=1;
+                }
             const h2 = document.createElement('h2');
+            h2.classList.add('h2Busq')
             h2.innerHTML = post.nube
             listadoBusquedas.append(div);
             div.appendChild(h2)
