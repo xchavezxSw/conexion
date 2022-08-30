@@ -104,20 +104,31 @@
 }
 .carousel{
     text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.146);
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 10px;
 }
 .h3busq{
+    margin: 0;
     color: white;
     background-color: #221969;
     padding: 5px;
-    border-radius:10px ;
-    width: 50%;
-    margin-left: 25%;
+    width: 100%;
 }
 .carousel-item{
     color: black;
 }
 .h2busq{
-  
+  background-color: #221969ea;
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  margin-top: 10px;
 }
 
 
