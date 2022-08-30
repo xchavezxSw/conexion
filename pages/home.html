@@ -23,6 +23,7 @@
   <!-- bootstrap sidebar stylesheet -->
   <link href="../css/bootstrap-sidebar.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <script>
@@ -45,7 +46,7 @@
         <div class="row">
           <div >
             <div>
-              <div class="panel-heading ">Aplications</div>
+              <div class="panel-heading ">Aplicaciones</div>
               <div id="feature-content">
                 <div>
                   <div class="panel panel-primary">
@@ -88,8 +89,28 @@
       </div>
     </div>
   </div>
-</body>
-<div class="modal fade" id="reserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <ul id="listadoBusquedas" style="padding-top: 350px;">
+    <h3 class="busqTit">Búsquedas de alta prioridad</h3>
+  </ul> 
+<script>
+  const listadoBusquedas = document.getElementById('listadoBusquedas')
+
+  fetch('http://181.13.244.170:5000/busquedasPrioritarias')
+        .then( (resp) => resp.json())
+        .then( (data) => {
+          data.forEach((post)=>{
+            const li = document.createElement('li')
+            li.innerHTML = `
+            <h4>${post.nube}</h4>
+            `
+            listadoBusquedas.append(li)
+          })
+        })
+</script>
+
+
+
+  <div class="modal fade" id="reserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -197,16 +218,16 @@
                     </div>
                 </div>
       <div class="modal-footer">
-        <button type="button" id="cierro" class="cierro" data-dismiss="modal">Close</button>
-            <button type="button" id="borro" class="cierro" >Borrar</button>
-        <button type="button" id="guardo" class="guardo">Save changes</button>
+        <button type="button" id="cierro" class="cierro" data-dismiss="modal">Cerrar</button>
+        <button type="button" id="clear" class="clear" >Restablecer</button>
+        <button type="button" id="guardo" class="guardo">Guardar cambios</button>
       </div>
     </div>
   </div>
 </div>
 
 
-<div class="modal fade" id="informe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<form class="modal fade" id="informe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -217,17 +238,17 @@
 
                     <div class="form-group">
                         <label >Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Escribe tu email...">
+                        <input type="email" class="form-control" id="emailInf" placeholder="Escribe tu email...">
                         <small id="emailHelp" class="form-text text-muted">Escribe tu email.</small>
                     </div>
                    <div class="form-group">
                         <label >Email Candidato</label>
-                        <input type="email" class="form-control" id="emailCandidato" placeholder="Escribe el mail del candidato">
+                        <input type="email" class="form-control" id="emailCandidatoInf" placeholder="Escribe el mail del candidato">
                         <small id="emailCandHelp" class="form-text text-muted">Escribe el mail del candidato</small>
                     </div>
           <div class="form-group">
                         <label >Nombre y Apellido del Candidato</label>
-                        <input type="naCandi" class="form-control" id="naCandi" placeholder="Escribe el Nombre y Apellido del Candidato">
+                        <input type="naCandi" class="form-control" id="naCandiInf" placeholder="Escribe el Nombre y Apellido del Candidato">
                         <small id="naCandiHelp" class="form-text text-muted">Escribe el Nombre y Apellido del Candidato</small>
                     </div>
          <div class="form-group">
@@ -237,7 +258,7 @@
                     </div>
                     <div class="form-group">
                       <label >ID</label>
-                      <input id="idReserva" type="idReserva" class="form-control" placeholder="IDs a Enviar a Cliente separados con '_' y sin la palabra 'ID' y sin espacios">
+                      <input id="idReservaInf" type="idReserva" class="form-control" placeholder="IDs a Enviar a Cliente separados con '_' y sin la palabra 'ID' y sin espacios">
                       <small class="form-text text-muted">IDs a Enviar a Cliente separados con '_' y sin la palabra 'ID' y sin espacios</small>
                   </div>
            <div class="form-group">
@@ -461,13 +482,13 @@
                     </div>
                     <div class="form-group">
                       <label >Linkedin del Candidato</label>
-                      <input type="url" name="sitioweb" pattern=".+\.com" class="form-control" id="lkCandi" placeholder="Escribe el Linkedin del Candidato">
+                      <input type="url" name="sitioweb" pattern=".+\.com" class="form-control" id="lkCandiInf" placeholder="Escribe el Linkedin del Candidato">
                       <small id="lkCandiHelp" class="form-text text-muted">Escribe el Linkedin del Candidato</small>
                   </div>
                   <div class="form-group">
                     <label >Tecnologías que sabe el candidato</label>
-        <multi-input id="minput">
-           <input id="tTecCandi" list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
+        <multi-input id="minputInf">
+           <input id="tTecCandiInf" list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
           <datalist id="tcandi">
                <option>.NET</option>
                 <option>Android</option>
@@ -501,8 +522,8 @@
                 </div>
                 <div class="form-group">
                   <label >Tipo de perfil del Candidato</label>
-      <multi-input id="tinput">
-          <input id="tperfilInput" list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
+      <multi-input id="tinputInf">
+          <input id="tperfilInputInf" list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
         <datalist id="tperfil">
             <option>Analista Funcional</option>
             <option>Arquitecto</option>
@@ -533,7 +554,7 @@
               </div>
               <div class="form-group">
                 <label >Comentarios Adicionales</label>
-                <input type="comment" class="form-control" id="comment" placeholder="Comentarios Adicionales">
+                <input type="comment" class="form-control" id="commentInf" placeholder="Comentarios Adicionales">
                 <small id="commentHelp" class="form-text text-muted"Comentarios Adicionales></small>
             </div>
               <div class="form-group">
@@ -550,16 +571,18 @@
                 </div>
                 <div class="form-group">
                   <label >Informe de Entrevista Inglés Candidato</label><br>
-                  <input   class="form-control" style="width: 100%;" type="text" id="informeEntIn" placeholder="Informe entrevista Inglés">
+                  <input   class="form-control" style="width: 100%;" type="text" id="informeEntIng" placeholder="Informe entrevista Inglés">
               </div>
                 </div>
       <div class="modal-footer">
-        <button type="button" id="cierro" class="cierro" data-dismiss="modal">Close</button>
-        <button type="button" id="guardo" class="guardo">Save changes</button>
+        <button type="button" id="cierro" class="cierro" data-dismiss="modal">Cerrar</button>
+        <input type="reset" id="clearInf" class="clear" >
+        <button type="button" id="guardo" class="guardo">Guardar cambios</button>
       </div>
     </div>
   </div>
-</div>
+</form>
+</body>
 </html>
 <script src="../js/multi-input.js">
 </script>
@@ -669,8 +692,8 @@ var anterior="";
         }
     })
   })
-$("#borro").on("click", function(e) {
-            $("#email").val("");
+$("#clear").on("click", function(e) {
+        $("#email").val("");
 		    $("#emailCandidato").val("");
 		    $("#naCandi").val("");
 		    $("#lkCandi").val("");
@@ -685,6 +708,32 @@ $("#borro").on("click", function(e) {
     valoresperfil[i].remove();
     }
  });
+
+ $("#clearInf").on("click", function(e) {
+        $("#emailInf").val("");
+		    $("#emailCandidatoInf").val("");
+		    $("#naCandiInf").val("");
+		    $("#lkCandiInf").val("");
+		    $("#idReservaInf").val("");
+		    $("#commentInf").val("");
+		    $("#sourcer").val("");
+		    $("#nivelIngles").val("");
+		    $("#remuneracionPretendida").val("");
+		    $("#locacion").val("");
+		    $("#cvesp").val("");
+		    $("#cving").val("");
+		    $("#informeEntEsp").val("");
+		    $("#informeEntIng").val("");
+		     valores=document.querySelector('#minputInf').querySelectorAll(".item");
+    for ( var i = 0, l = valores.length; i < l; i++ ) {
+	valores[i].remove();
+    }
+    valoresperfil=document.querySelector('#tinputInf').querySelectorAll(".item");
+    for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+    valoresperfil[i].remove();
+    }
+ });
+
 
 $("#guardo").on("click", function(e) {
  
@@ -734,7 +783,18 @@ $('#reserva').modal('toggle');
 	    
 	    },
         error:function(result) {
-          alert('error');
+          Toastify({
+          text: "Error",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "center", 
+          stopOnFocus: true, 
+          style: {
+            background: "#221969",
+          },
+        }).showToast();
 
         }
     }
@@ -742,15 +802,54 @@ $('#reserva').modal('toggle');
 }
 else{
 	if ( $("#email").val()!= "")
-		alert("El formato del mail es incorrecto");
+  Toastify({
+  text: "Ingresá un email válido",
+  duration: 3000,
+  newWindow: true,
+  close: true,
+  gravity: "top",
+  position: "center", 
+  stopOnFocus: true, 
+  style: {
+    background: "#221969",
+  },
+}).showToast();
+if ( $("#emailCandidato").val()!= "")
+  Toastify({
+  text: "Ingresá un email válido",
+  duration: 3000,
+  newWindow: true,
+  close: true,
+  gravity: "top",
+  position: "center", 
+  stopOnFocus: true, 
+  style: {
+    background: "#221969",
+  },
+}).showToast();
 }
 }
 );
 function borroextra(borrado){
 $( "."+borrado ).remove();
 }
-
-
 </script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+
+
+
 
 

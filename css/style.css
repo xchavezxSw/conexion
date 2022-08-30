@@ -2,7 +2,7 @@
     font-family: 'Ubuntu', sans-serif;
     background-color: #221969;
 }
-form{
+.formInicioSesion{
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border:solid 0.2px white;
@@ -72,7 +72,16 @@ form{
     border: none;
     border-radius: 10px;
 }
-.cierro:hover, .guardo:hover{
+.clear{
+    margin-left: 5px;
+    font-size: 15px;
+    background-color: rgb(78, 126, 128);
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.cierro:hover, .guardo:hover, .clear:hover{
     transform: scale(1.1);
 }
 .bodyBusquedas{
@@ -88,6 +97,11 @@ form{
     color: white;
     font-weight:bold ;
     text-align: center;
+}
+.busqTit{
+    background-color: #221969;
+    color: white;
+    padding: 5px;
 }
 
 
