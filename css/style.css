@@ -103,34 +103,21 @@
     margin: 0;
 }
 .carousel{
-   text-align: center;
-   margin-top: 10px;
-   
+    text-align: center;
 }
 .h3busq{
-    background-color: #221969;
     color: white;
-    width:50%; 
+    background-color: #221969;
+    padding: 5px;
+    border-radius:10px ;
+    width: 50%;
     margin-left: 25%;
-    padding: 8px;
-    border-radius: 10px;
 }
 .carousel-item{
-    color: white;
-    display: flex;
-    align-items: center;
-    transform: transform 2.6s ease-in-out;
+    color: black;
 }
-.carousel-fade .active.carousel-item-start,
-.carousel-fade .active.carousel-item-end {
-  transition: 0s 2.6s;
-}
-.h2Busq{
-    background-color: #221969ce;
-    padding: 5px;
-    width: 40%;
-    margin-left: 30%;
-    border-radius:10px ;
+.h2busq{
+  
 }
 
 
