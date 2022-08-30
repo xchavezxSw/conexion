@@ -25,7 +25,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
+<script>
 
+</script>
 <body>
   <div>
     <nav class="navbar navbar-fixed-top">
@@ -196,6 +198,7 @@
                 </div>
       <div class="modal-footer">
         <button type="button" id="cierro" class="cierro" data-dismiss="modal">Close</button>
+            <button type="button" id="borro" class="cierro" >Borrar</button>
         <button type="button" id="guardo" class="guardo">Save changes</button>
       </div>
     </div>
@@ -576,6 +579,19 @@ var anterior="";
                       if (data.hasOwnProperty("datos")){
                         return false
                       }else{
+                        $("#email").val("");
+                         valores=document.querySelector('#minput').querySelectorAll(".item");
+                            for ( var i = 0, l = valores.length; i < l; i++ ) {
+                            valores[i].remove();
+                            }
+                            valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
+                            for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+                            valoresperfil[i].remove();
+                            }
+                        $("#naCandi").val("");
+                        $("#lkCandi").val("");
+                        $("#idReserva").val("");
+                        $("#comment").val("");
                         $("#email").val(data['Email Address'])
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
@@ -614,6 +630,19 @@ var anterior="";
                       if (data.hasOwnProperty("datos")){
                         return false
                       }else{
+                      $("#email").val("");
+                     valores=document.querySelector('#minput').querySelectorAll(".item");
+                        for ( var i = 0, l = valores.length; i < l; i++ ) {
+                        valores[i].remove();
+                        }
+                        valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
+                        for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+                        valoresperfil[i].remove();
+                        }
+                        $("#naCandi").val("");
+                        $("#lkCandi").val("");
+                        $("#idReserva").val("");
+                        $("#comment").val("");
                         $("#email").val(data['Email Address'])
                         $("#naCandi").val(data['Nombre y Apellido del Candidato'])
 	                      $("#lkCandi").val(data['Linkedin del Candidato'])
@@ -640,6 +669,22 @@ var anterior="";
         }
     })
   })
+$("#borro").on("click", function(e) {
+            $("#email").val("");
+		    $("#emailCandidato").val("");
+		    $("#naCandi").val("");
+		    $("#lkCandi").val("");
+		    $("#idReserva").val("");
+		    $("#comment").val("");
+		     valores=document.querySelector('#minput').querySelectorAll(".item");
+    for ( var i = 0, l = valores.length; i < l; i++ ) {
+	valores[i].remove();
+    }
+    valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
+    for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+    valoresperfil[i].remove();
+    }
+ });
 
 $("#guardo").on("click", function(e) {
  
@@ -701,6 +746,7 @@ else{
 }
 }
 );
+
 </script>
 
 
