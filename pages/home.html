@@ -650,7 +650,7 @@ var anterior="";
 
 
 	                      $("#comment").val(data['Comentarios adicionales'])
-	                      $("#cierro").click()
+
                       }
                         },
                     error:function(result) {
@@ -703,7 +703,7 @@ var anterior="";
 
 
 	                      $("#comment").val(data['Comentarios adicionales'])
-	                      $("#cierro").click()
+
                       }
                     },
                 error:function(result) {
@@ -801,7 +801,7 @@ $('#reserva').modal('toggle');
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
-	    
+	       $("#cierro").click()
 	    },
         error:function(result) {
           Toastify({
