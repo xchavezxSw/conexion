@@ -39,7 +39,7 @@
         </div>
           <ul class="buttonOff">
             <li class="dropdown singOffAndButtonOff">
-               <a class="singOff" href="../index.html"><span class="glyphicon glyphicon-off" style="color: white;" aria-hidden="true"></span></a>
+               <a class="singOff" href="../index.html"><span class="salir glyphicon glyphicon-off" style="color: white;" aria-hidden="true"></span></a>
             </li>
           </ul>
     </nav>
@@ -66,7 +66,14 @@
                     </div>
                   </div>
                 </div>
-
+                <div>
+                  <div class="panel panel-primary">
+                    <div class="panel-body text-center"  data-toggle="modal" data-target="#tablasInformes"  >
+                      <span class="glyphicon glyphicon-list-alt icon-big" aria-hidden="true"></span>
+                      <h3>Informes</h3>
+                    </div>
+                  </div>
+                </div>
                 <div>
                   <div class="panel panel-primary">
                     <div class="panel-body text-center">
@@ -132,7 +139,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Solicitud Reserva</h4>
+        <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Solicitud de reserva</h4>
       </div>
       <div class="modal-body" style="color: black;">
 
@@ -249,7 +256,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Informes</h4>
+        <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Cargar informe</h4>
       </div>
       <div class="modal-body" style="color: black;">
 
@@ -599,7 +606,26 @@
     </div>
   </div>
 </form>
+<div class="modal fade" id="tablasInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Informes</h4>
+      </div>
+      <a  class="btn-informes" href="./enCliente.html">En cliente</a>
+      <a  class="btn-informes" href="./reservados.html">Reservados</a>
+      <a  class="btn-informes" href="./pertenencias.html">Pertenencias</a>
+      <a  class="btn-informes" href="./fueraDeProceso.html">Fuera de proceso</a>
+      <a  class="btn-informes" href="./ingresosConfirmados.html">Ingresos confirmados</a>
+      <a  class="btn-informes" href="./tablaInformes.html">Informes a revisar</a>
+    </div>
+  </div>
+</div>
 
+<footer class="footer">
+  <p>2022 ConexionHR sistema </p>
+</footer>
 </body>
 </html>
 <script src="../js/multi-input.js">

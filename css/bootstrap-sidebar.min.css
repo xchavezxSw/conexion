@@ -1,10 +1,11 @@
 body{font-family: 'Ubuntu', sans-serif;background-color: rgb(253, 251, 246);}
-#feature-content{padding: 10px; display: flex;flex-wrap: wrap; justify-content: space-evenly;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;  background-color: #78768628;}
+#feature-content{padding: 10px; display: flex;flex-wrap: wrap; justify-content: space-evenly;border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;  background-color: #78768628;}
 .logo{padding: 5px;}
 .panel{border-radius:10px;background:#221969;color:#fff;border:none;}
 .panel-heading{font-size: 20px; text-align: center; background-color: #221969;} .h1Conexion{font-size: 25px;}
 .navbar{background-color: #221969; display: flex; justify-content: space-between;padding: 15px;} .glyphicon{font-size: 20px;}
-.panel-primary{display: flex; align-items: center;justify-content: space-evenly; width: 250px; height: 150px; margin:4px;
+.panel-primary{display: flex; align-items: center;justify-content: space-evenly; width: 200px; height: 150px; margin:4px;
 cursor: pointer;}#feature-content .panel:hover{background-color:rgba(207, 42, 185, 0.678);color:#fff}
 .Aplications{font-weight: bold;margin-top:100px; color: white; width:80%; padding:10px;}
 li{text-indent:10px;line-height:10px;margin-bottom:10px;
