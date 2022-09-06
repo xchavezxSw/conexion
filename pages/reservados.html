@@ -28,7 +28,7 @@
     </header>
     <main>
         <div class="contenedorTabla">
-            <table id="table_id" class="display tablaBusquedas">
+            <table id="tableReservados" class="display tablaBusquedas">
                 <thead>
                     <tr>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 1</th>
@@ -54,5 +54,21 @@
     <footer class="footer">
         <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
       </footer>
+      <script>
+        $(document).ready( function () {
+            $('#tableReservados').DataTable({
+          "ajax": {
+            "url": "",
+            dataSrc: '',
+            columns: [
+        { "data": "" },
+        { "data": "" },
+        { "data": "" }
+        ]
+          }
+        
+        } )
+        } );
+        </script>
 </body>
 </html>

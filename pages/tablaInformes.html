@@ -28,7 +28,7 @@
     </header>
     <main>
         <div class="contenedorTabla">
-            <table id="table_id" class="display tablaBusquedas">
+            <table id="tableInfRevisar" class="display tablaBusquedas">
                 <thead>
                     <tr>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 1</th>
@@ -53,6 +53,23 @@
     </main>
     <footer class="footer">
         <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
-      </footer>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            $('#tableInfRevisar').DataTable({
+            ajax: {
+                "url":'http://181.13.244.170:5000/getInformesArevisar',
+                dataSrc: '',
+            columns: [
+                { "data": 'IDs Aprobados' },
+                { "data": 'IDs Rechazados' },
+                { "data": 'Status en Base' },
+                { "data": 'Marca temporal' },
+                { "data": 'Dirección de correo electrónico' },
+                { "data": 'E-Mail Candidato' },
+            ]}
+        });
+        });
+    </script>
 </body>
 </html>

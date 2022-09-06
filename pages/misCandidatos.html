@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexion | Fuera de proceso</title>
+    <title>Conexion | Candidatos</title>
     <link rel="shortcut icon" href="https://conexion-hr.com/wp-content/uploads/2022/04/conexion-hr-favicon.png" sizes="32x32">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 </head>
-<body class="bodyInformes">
+<body class="bodyBusquedas">
     <header>
         <nav class="navbar navbar-fixed-top">
             <div class="navbar-header">
@@ -28,7 +28,7 @@
     </header>
     <main>
         <div class="contenedorTabla">
-            <table id="tableFueraDeProceso" class="display tablaBusquedas">
+            <table id="tableCandidatos" class="display tablaBusquedas">
                 <thead>
                     <tr>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 1</th>
@@ -51,25 +51,25 @@
             </table>
         </div>
     </main>
+    
+    <script>
+    $(document).ready( function () {
+        $('#tableCandidatos').DataTable({
+      "ajax": {
+        "url": "",
+        dataSrc: '',
+        columns: [
+    { "data": "" },
+    { "data": "" },
+    { "data": "" }
+    ]
+      }
+    
+    } )
+    } );
+    </script>
     <footer class="footer">
         <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
       </footer>
-      <script>
-        $(document).ready( function () {
-            $('#tableFueraDeProceso').DataTable({
-          "ajax": {
-            "url": "",
-            dataSrc: '',
-            columns: [
-        { "data": "" },
-        { "data": "" },
-        { "data": "" }
-        ]
-          }
-        
-        } )
-        } );
-        </script>
-</body>
 </body>
 </html>
