@@ -77,6 +77,12 @@
     </footer>
     <script>
         $(document).ready(function () {
+
+            $('#aprobar').onclick=()=>{
+            alert('hola')
+        }
+        
+
             $('#tableInfRevisar').DataTable({
             ajax: {
                 "url":'http://181.13.244.170:5000/getInformesArevisar',
@@ -108,9 +114,19 @@
             ]},
          'columnDefs' : [
 
-        { 'visible': false, 'targets': [0,2,3] }
+        { 'visible': false, 'targets': [0,1,2,3] }
     ]
         });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#tableInfRevisar tbody').on('click', 'td #aprobar', function () {
+                let td = document.getElementsByTagName('td')
+                console.log(td[4].textContent)
+                console.log(td[2].textContent)
+                console.log(td[17].textContent)
+            });
         });
     </script>
 </body>
