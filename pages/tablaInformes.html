@@ -32,12 +32,29 @@
                 <thead>
                     <tr>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 1</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 2</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Fecha</th>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 3</th>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 4</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 5</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 6</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 7</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Status en Base</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Marca temporal</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Dirección de correo electrónico</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Es Sourcer? (Colocar 'Si' en caso de no haber entrevistado al candidato)</th>
+                        <th style="text-align: center; background-color:#221969f7;" >E-mail del candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >IDs a enviar a cliente (separados con '_', sin la palabra 'ID' y sin espacios)</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Qué tecnologías maneja el candidato?</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Qué perfil es el candidato?</th>
+                        <th style="text-align: center; background-color:#221969f7;" >LinkedIn del canditato (link)</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Comentarios</th>
+                        <th style="text-align: center; background-color:#221969f7;" >CV Español candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Informe de entrevista Español candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >CV Inglés candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Informe de entrevista Inglés candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Remuneración pretendida mensual</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Nivel de Inglés</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Locación</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Nombre y apellido del candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Motivo rechazo</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Acciones</th>
                     </tr>
                 </thead>
                 <tbody style="background-color:#30286efa;">
@@ -65,10 +82,9 @@
                 "url":'http://181.13.244.170:5000/getInformesArevisar',
                 dataSrc: '',
             columns: [
-                { "data": 'aprobado' },
+                { "data": 'Nombre y Apellido del Candidato' },
                 { "data": 'Fecha' },
-                { "data": 'IDs Aprobados' },
-                { "data": 'IDs Rechazados' },
+                { "data": 'ID' },
                 { "data": 'Status en Base' },
                 { "data": 'Marca temporal' },
                 { "data": 'Dirección de correo electrónico' },
@@ -77,8 +93,23 @@
                 { "data": 'IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios' },
                 { "data": '¿Qué tecnologías maneja el candidato?' },
                 { "data": '¿Qué perfil es el Candidato?' },
+                { "data": 'Linkedin del Candidato (Link)' },
+                { "data": 'Comentarios' },
+                { "data": 'CV Español Candidato' },
+                { "data": 'Informe de Entrevista Español Candidato' },
+                { "data": 'CV Inglés Candidato' },
+                { "data": 'Informe de Entrevista Inglés Candidato' },
+                { "data": 'Remuneración pretendida MENSUAL' },
+                { "data": 'Nivel de Ingles' },
+                { "data": 'Locación' },
+                { "data": 'Motivo Rechazo' },
+                { "data": "<input type='checkbox'/>" },
 
-            ]}
+            ]},
+         'columnDefs' : [
+
+        { 'visible': false, 'targets': [0,2,3] }
+    ]
         });
         });
     </script>
