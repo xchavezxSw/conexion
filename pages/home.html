@@ -873,7 +873,7 @@ $('#informe').modal('toggle');
     multiinput.push(valores[i].textContent);
     }
     tperfil=Array();
-    valoresperfil=document.querySelector('#tperfilInf').querySelectorAll(".item")
+    valoresperfil=document.querySelector('#tinputInf').querySelectorAll(".item")
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     tperfil.push(valoresperfil[i].textContent);
     }
@@ -885,8 +885,8 @@ $('#informe').modal('toggle');
           naCandiInf: $("#NombreyApellidodelCandidatoInf").val(),
           lkCandiInf: $("#LKCandiInf").val(),
           idReservaInf: $("#IdsaEnviarInf").val(),
-          TpCandiInf: multiinput,
-          tperfilInf: tperfil,
+          TecnoCandiInf: multiinput,
+          TpCandiInf: tperfil,
           commentInf: $("#CommentInf").val(),
           EsSourceInf: $("#EsSourceInf").val(),
           remuneracionPretendidaMensualInf : $("#RemuneracionPretendidaMensualInf").val(),
