@@ -18,12 +18,15 @@
     border-bottom-left-radius: 20px;
     border:solid 0.2px white;
     width: 400px;
-    height: 320px;
+    height: 440px;
     padding: 10px;
     text-align: center;
     margin: 50px auto;
     background-color: rgb(253, 251, 246);
     box-shadow: -1px 1px 10px 3px  white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .titleForm{
     font-size: 35px;
@@ -50,6 +53,7 @@
     border: solid 0.5px rgba(128, 128, 128, 0.363);
     border-radius: 20px;
     margin-top: 8px;
+    margin-bottom: 20px;
     height: 35px;
     background-color:#221969;
     color: white;
