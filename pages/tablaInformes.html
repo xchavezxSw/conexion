@@ -33,7 +33,11 @@
                     <tr>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 1</th>
                         <th style="text-align: center; background-color:#221969f7;" >Columna 2</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 2</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Columna 3</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Columna 4</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Columna 5</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Columna 6</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Columna 7</th>
                     </tr>
                 </thead>
                 <tbody style="background-color:#30286efa;">
@@ -61,12 +65,19 @@
                 "url":'http://181.13.244.170:5000/getInformesArevisar',
                 dataSrc: '',
             columns: [
+                { "data": 'aprobado' },
+                { "data": 'Fecha' },
                 { "data": 'IDs Aprobados' },
                 { "data": 'IDs Rechazados' },
                 { "data": 'Status en Base' },
                 { "data": 'Marca temporal' },
                 { "data": 'Dirección de correo electrónico' },
+                { "data": '¿Es Sourcer? (Colocar Sí en caso de no haber entrevistado al Candidato)' },
                 { "data": 'E-Mail Candidato' },
+                { "data": 'IDs a Enviar a Cliente separados con "_" y sin la palabra "ID" y sin espacios' },
+                { "data": '¿Qué tecnologías maneja el candidato?' },
+                { "data": '¿Qué perfil es el Candidato?' },
+
             ]}
         });
         });

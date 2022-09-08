@@ -578,7 +578,7 @@
               </div>
                 </div>
       <div class="modal-footer">
-        <button type="button" id="cierro" class="cierro" data-dismiss="modal">Cerrar</button>
+        <button type="button" id="cierroInf" class="cierro" data-dismiss="modal">Cerrar</button>
         <input type="reset" id="clearInf" class="clear" >
         <button type="button" id="guardoInf" class="guardo">Guardar</button>
       </div>
@@ -921,7 +921,7 @@ $('#informe').modal('toggle');
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
-	       $("#cierro").click()
+	       $("#cierroInf").click()
 	    },
         error:function(result) {
           Toastify({
