@@ -76,16 +76,9 @@
         <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
     </footer>
     <script>
-        $(document).ready(function () {
-
-            $('#aprobar').onclick=()=>{
-            alert('hola')
-        }
-        
-
             $('#tableInfRevisar').DataTable({
             ajax: {
-                "url":'http://181.13.244.170:5000/getInformesArevisar',
+                "url":'http://127.0.0.1:5000/getInformesArevisar',
                 dataSrc: '',
             columns: [
                 { "data": 'Nombre y Apellido del Candidato' },
@@ -117,17 +110,67 @@
         { 'visible': false, 'targets': [0,1,2,3] }
     ]
         });
-        });
     </script>
     <script>
         $(document).ready(function () {
             $('#tableInfRevisar tbody').on('click', 'td #aprobar', function () {
                 let td = document.getElementsByTagName('td')
-                console.log(td[4].textContent)
-                console.log(td[2].textContent)
-                console.log(td[17].textContent)
-            });
-        });
+                $.ajax({type: "POST",
+        url: "http://127.0.0.1:5000/revisarAprobado",
+	data: { 
+        stEnBaseInf:td[1].textContent,
+        emailInf:td[2].textContent,        
+        esSourceInf:td[3].textContent,        
+        emailCandiInf:td[4].textContent,             
+        idInf:td[5].textContent,
+        tecCandiInf:td[6].textContent,        
+        tPCandiInf:td[7].textContent,        
+        lkCandiInf:td[8].textContent,        
+        comentInf:td[9].textContent,        
+        cvEspInf:td[10].textContent,        
+        infEntEsp:td[11].textContent,        
+        cvIngInf:td[12].textContent,        
+        infEntIng:td[13].textContent, 
+        remuneracionPretendida:td[14].textContent, 
+        nivelInglesInf:td[15].textContent, 
+        locacionInf:td[16].textContent, 
+        nombreCandiInf:td[17].textContent, 
+        motivoRechInf:td[18].textContent, 
+        status:'True',
+       }
+        })
+    })
+})
+
+$(document).ready(function () {
+            $('#tableInfRevisar tbody').on('click', 'td #rechazar', function () {
+                let td = document.getElementsByTagName('td')
+                $.ajax({type: "POST",
+        url: "http://127.0.0.1:5000/revisarAprobado",
+	data: { 
+        stEnBaseInf:td[1].textContent,
+        emailInf:td[2].textContent,        
+        esSourceInf:td[3].textContent,        
+        emailCandiInf:td[4].textContent,             
+        idInf:td[5].textContent,
+        tecCandiInf:td[6].textContent,        
+        tPCandiInf:td[7].textContent,        
+        lkCandiInf:td[8].textContent,        
+        comentInf:td[9].textContent,        
+        cvEspInf:td[10].textContent,        
+        infEntEsp:td[11].textContent,        
+        cvIngInf:td[12].textContent,        
+        infEntIng:td[13].textContent, 
+        remuneracionPretendida:td[14].textContent, 
+        nivelInglesInf:td[15].textContent, 
+        locacionInf:td[16].textContent, 
+        nombreCandiInf:td[17].textContent, 
+        motivoRechInf:td[18].textContent, 
+        status:'False',
+       }
+        })
+    })
+})
     </script>
 </body>
 </html>
