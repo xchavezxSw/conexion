@@ -104,9 +104,11 @@
         });
     </script>
     <script>
+
         $(document).ready(function () {
             $('#tableInfRevisar tbody').on('click', 'td #aprobar', function () {
-                let td = document.getElementsByTagName('td')
+               let td= $(this).closest("tr")   // Finds the closest row <tr>
+                       .find("td")
                 $.ajax({type: "POST",
         url: "http://127.0.0.1:5000/revisarAprobado",
 	data: { 
@@ -135,8 +137,11 @@
 })
 
 $(document).ready(function () {
-            $('#tableInfRevisar tbody').on('click', 'td #rechazar', function () {
-                let td = document.getElementsByTagName('td')
+            $('#tableInfRevisar tbody').on('click', 'tr #rechazar', function () {
+                let td= $(this).closest("tr")   // Finds the closest row <tr>
+                       .find("td")     // Gets a descendent with class="nr"
+
+                console.log(td)
                 $.ajax({type: "POST",
         url: "http://127.0.0.1:5000/revisarAprobado",
 	data: { 
