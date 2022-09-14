@@ -618,21 +618,44 @@ $("#email").change(function() {
                     email: $("#email").val()
               },
               success:function(){
-                alert('clau gato')
               },
               error:function() {
-                alert('el usuario no esta habilitado para hacer registros');
-                $("#naCandi").prop("readonly", true);
-                $("#lkCandi").prop("readonly", true);
-                $("#idReserva").prop("readonly", true);
-                $("#comment").prop("readonly", true);
-                $("#email").prop("readonly", true);
-                $("#emailCandidato").prop("readonly", true);
-                $("#naCandi").prop("readonly", true);
-                $("#lkCandi").prop("readonly", true);
-                $("#idReserva").prop("readonly", true);
-                $("#tcandiInput").prop("readonly", true);
-                $("#tperfilInput").prop("readonly", true);
+                Toastify({
+                    text: "El usuario no está habilitado para hacer nuevos registros.",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
+                $("#naCandi").val('');
+                $("#lkCandi").val('');
+                $("#idReserva").val('');
+                $("#comment").val('');
+                $("#email").val('');
+                $("#emailCandidato").val('');
+                $("#naCandi").val('');
+                $("#lkCandi").val('');
+                $("#idReserva").val('');
+                $("#tcandiInput").val('');
+                $("#tperfilInput").val('');
+                /*$("#clear").on("click", function(e){
+                    $("#naCandi").prop("readonly", false);
+                    $("#lkCandi").prop("readonly", false);
+                    $("#idReserva").prop("readonly", false);
+                    $("#comment").prop("readonly", false);
+                    $("#email").prop("readonly", false);
+                    $("#emailCandidato").prop("readonly", false);
+                    $("#naCandi").prop("readonly", false);
+                    $("#lkCandi").prop("readonly", false);
+                    $("#idReserva").prop("readonly", false);
+                    $("#tcandiInput").prop("readonly", false);
+                    $("#tperfilInput").prop("readonly", false);
+                });*/
               }
             })
 })
