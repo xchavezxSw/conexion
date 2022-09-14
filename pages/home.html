@@ -124,7 +124,7 @@
 
                     <div class="form-group">
                         <label >Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Escribe tu email...">
+                        <input type="email" class="form-control" id="email" placeholder="Escribe tu email..." >
                         <small id="emailHelp" class="form-text text-muted">Escribe tu email.</small>
                     </div>
                    <div class="form-group">
@@ -610,59 +610,87 @@
 <script src="../js/multi-input.js">
 </script>
 <script>
+$("#email").change(function() {
+      $.ajax({
+              type: "POST",
+              url: "http://127.0.0.1:5000/getPermitido",
+              data: {
+                    email: $("#email").val()
+              },
+              success:function(){
+                alert('hola')
+              },
+              error:function() {
+                alert('el usuario no esta habilitado para hacer registros');
+                $("#naCandi").prop("readonly", true);
+                $("#lkCandi").prop("readonly", true);
+                $("#idReserva").prop("readonly", true);
+                $("#comment").prop("readonly", true);
+                $("#email").prop("readonly", true);
+                $("#emailCandidato").prop("readonly", true);
+                $("#naCandi").prop("readonly", true);
+                $("#lkCandi").prop("readonly", true);
+                $("#idReserva").prop("readonly", true);
+                $("#tcandiInput").prop("readonly", true);
+                $("#tperfilInput").prop("readonly", true);
+              }
+            })
+})
 
 var anterior="";
  $("#emailCandidato").focusout(function() {
      if (anterior=="" && $("#emailCandidato").val() != "")
      {
-            $.ajax({type: "POST",
-                    url: "http://181.13.244.170:5000/Getreservas",
-                    data: {
-                            emailCandidato: $("#emailCandidato").val()
-                          },
-                    success:function(data) {
-                      if (data.hasOwnProperty("datos")){
-                        return false
-                      }else{
-                        $("#email").val("");
-                         valores=document.querySelector('#minput').querySelectorAll(".item");
-                            for ( var i = 0, l = valores.length; i < l; i++ ) {
-                            valores[i].remove();
-                            }
-                            valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
-                            for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
-                            valoresperfil[i].remove();
-                            }
-                        $("#naCandi").val("");
-                        $("#lkCandi").val("");
-                        $("#idReserva").val("");
-                        $("#comment").val("");
-                        $("#email").val(data['Email Address'])
-                        $("#emailCandidato").val(data['Email Candidato'])
-                        $("#naCandi").val(data['Nombre y Apellido del Candidato'])
-	                      $("#lkCandi").val(data['Linkedin del Candidato'])
-	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
-	                      valor=data['Tecnologías que sabe el candidato'].split(',')
-                        var i;
-                        for (i = 0; i < valor.length; ++i) {
-                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tcandiInput");
+        $.ajax({type: "POST",
+                url: "http://181.13.244.170:5000/Getreservas",
+                data: {
+                        emailCandidato: $("#emailCandidato").val()
+                      },
+                success:function(data) {
+                  if (data.hasOwnProperty("datos")){
+                    return false
+                  }else{
+                    $("#email").val("");
+                      valores=document.querySelector('#minput').querySelectorAll(".item");
+                        for ( var i = 0, l = valores.length; i < l; i++ ) {
+                        valores[i].remove();
                         }
-	                    valor=data['Tipo de perfil del Candidato'].split(',')
-                        var i;
-                        for (i = 0; i < valor.length; ++i) {
-                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tperfilInput");
+                        valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
+                        for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+                        valoresperfil[i].remove();
                         }
+                    $("#naCandi").val("");
+                    $("#lkCandi").val("");
+                    $("#idReserva").val("");
+                    $("#comment").val("");
+                    $("#email").val(data['Email Address']);
+                    $("#email").prop("readonly", true);
+                    $("#emailCandidato").val(data['Email Candidato']);
+                    $("#emailCandidato").prop("readonly", true);
+                    $("#naCandi").val(data['Nombre y Apellido del Candidato']);
+                    $("#lkCandi").val(data['Linkedin del Candidato']);
+                    $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"']);
+                    valor=data['Tecnologías que sabe el candidato'].split(',')
+                    var i;
+                    for (i = 0; i < valor.length; ++i) {
+                          $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tcandiInput");
+                    }
+                  valor=data['Tipo de perfil del Candidato'].split(',')
+                    var i;
+                    for (i = 0; i < valor.length; ++i) {
+                          $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tperfilInput");
+                    }
 
 
-	                      $("#comment").val(data['Comentarios adicionales'])
+                    $("#comment").val(data['Comentarios adicionales'])
 
-                      }
-                        },
-                    error:function(result) {
-                        alert('error');
-                       }
-                    })
-      }
+                  }
+                    },
+                error:function(result) {
+                    alert('error');
+                    }
+                })
+  }
  $("#emailCandidato").change(function() {
     actual=$("#emailCandidato").val();
     if (anterior != actual) 
