@@ -643,23 +643,9 @@ $("#email").change(function() {
                 $("#idReserva").val('');
                 $("#tcandiInput").val('');
                 $("#tperfilInput").val('');
-                /*$("#clear").on("click", function(e){
-                    $("#naCandi").prop("readonly", false);
-                    $("#lkCandi").prop("readonly", false);
-                    $("#idReserva").prop("readonly", false);
-                    $("#comment").prop("readonly", false);
-                    $("#email").prop("readonly", false);
-                    $("#emailCandidato").prop("readonly", false);
-                    $("#naCandi").prop("readonly", false);
-                    $("#lkCandi").prop("readonly", false);
-                    $("#idReserva").prop("readonly", false);
-                    $("#tcandiInput").prop("readonly", false);
-                    $("#tperfilInput").prop("readonly", false);
-                });*/
               }
             })
 })
-
 var anterior="";
  $("#emailCandidato").focusout(function() {
      if (anterior=="" && $("#emailCandidato").val() != "")
@@ -710,7 +696,18 @@ var anterior="";
                   }
                     },
                 error:function(result) {
-                    alert('error');
+                  Toastify({
+                    text: "El candidato fue contratado con anterioridad.",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
                     }
                 })
   }
@@ -763,7 +760,18 @@ var anterior="";
                       }
                     },
                 error:function(result) {
-                     alert('error');
+                  Toastify({
+                    text: "El candidato fue contratado con anterioridad.",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
                 }
               })
         }
