@@ -775,6 +775,150 @@ var anterior="";
         }
     })
   })
+  
+  //------------------------------------------------------------
+
+  $("#EMailCandidatoInf").focusout(function() {
+     if (anterior=="" && $("#EMailCandidatoInf").val() != "")
+     {
+        $.ajax({type: "POST",
+                url: "http://181.13.244.170:5000/Getreservas",
+                data: {
+                        emailCandidato: $("#EMailCandidatoInf").val()
+                      },
+                success:function(data) {
+                  if (data.hasOwnProperty("datos")){
+                    return false
+                  }else{
+                    $("#emailInf").val("");
+                      valores=document.querySelector('#minputInf').querySelectorAll(".item");
+                        for ( var i = 0, l = valores.length; i < l; i++ ) {
+                        valores[i].remove();
+                        }
+                        valoresperfil=document.querySelector('#tinputInf').querySelectorAll(".item");
+                        for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+                        valoresperfil[i].remove();
+                        }
+                    $("#CommentInf").val("").prop("readonly", true);
+                    $("#EsSourceInf").val("").prop("readonly", true);
+                    $("#RemuneracionPretendidaMensualInf").val("").prop("readonly", true);
+                    $("#NiveldeInglesInf").val("").prop("readonly", true);
+                    $("#LocacionInf").val("").prop("readonly", true);
+                    $("#cvesp").val("").prop("readonly", true);
+                    $("#cving").val("").prop("readonly", true);
+                    $("#TpCandiInf").val("").prop("readonly", true);
+                    $("#TecnoCandiInf").val("").prop("readonly", true);
+                    $("#informeEntEsp").val("").prop("readonly", true);
+                    $("#informeEntIng").val("").prop("readonly", true);
+                    $("#EmailInf").val(data['Email Address']).prop("readonly", true);
+                    $("#EMailCandidatoInf").val(data['Email Candidato']).prop("readonly", true);
+                    $("#NombreyApellidodelCandidatoInf").val(data['Nombre y Apellido del Candidato']).prop("readonly", true);
+                    $("#LKCandiInf").val(data['Linkedin del Candidato']).prop("readonly", true);
+                    $("#IdsaEnviarInf").val(data['IDs de reserva separdos con "_" sin la palabra "ID"']).prop("readonly", true);
+                    valor=data['Tecnologías que sabe el candidato'].split(',')
+                    var i;
+                    for (i = 0; i < valor.length; ++i) {
+                          $("<div class='item'>"+valor[i]+"<div>").insertBefore("#TecnoCandiInf");
+                    }
+                  valor=data['Tipo de perfil del Candidato'].split(',')
+                    var i;
+                    for (i = 0; i < valor.length; ++i) {
+                          $("<div class='item'>"+valor[i]+"<div>").insertBefore("#TpCandiInf");
+                    }
+
+
+                    $("#CommentInf").val(data['Comentarios adicionales']).prop("readonly", true);
+
+                  }
+                    },
+                error:function(result) {
+                  Toastify({
+                    text: "El candidato fue contratado con anterioridad.",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
+                    }
+                })
+  }
+ $("#EMailCandidatoInf").change(function() {
+    actual=$("#EMailCandidatoInf").val();
+    if (anterior != actual) 
+       {
+        anterior=actual;
+        $.ajax({type: "POST",
+                url: "http://181.13.244.170:5000/Getreservas",
+	            data: {
+                    emailCandidato: $("#EMailCandidatoInf").val()
+                      },
+                      success:function(data) {
+                      if (data.hasOwnProperty("datos")){
+                        return false
+                      }else{
+                      $("#email").val("");
+                     valores=document.querySelector('#minputInf').querySelectorAll(".item");
+                        for ( var i = 0, l = valores.length; i < l; i++ ) {
+                        valores[i].remove();
+                        }
+                        valoresperfil=document.querySelector('#tinputInf').querySelectorAll(".item");
+                        for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
+                        valoresperfil[i].remove();
+                        }
+                        $("#EsSourceInf").val("");
+                        $("#RemuneracionPretendidaMensualInf").val("");
+                        $("#NiveldeInglesInf").val("");
+                        $("#LocacionInf").val("");
+                        $("#cvesp").val("");
+                        $("#cving").val("");
+                        $("#informeEntEsp").val("");
+                        $("#informeEntIng").val("");
+                        $("#CommentInf").val("");
+                        $("#EmailInf").val(data['Email Address'])
+                        $("#EMailCandidatoInf").val(data['Email Candidato'])
+                        $("#NombreyApellidodelCandidatoInf").val(data['Nombre y Apellido del Candidato'])
+	                      $("#LKCandiInf").val(data['Linkedin del Candidato'])
+	                      $("#IdsaEnviarInf").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
+	                               valor=data['Tecnologías que sabe el candidato'].split(',')
+                        var i;
+                        for (i = 0; i < valor.length; ++i) {
+                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#TecnoCandiInf");
+                        }
+	                    valor=data['Tipo de perfil del Candidato'].split(',')
+                        var i;
+                        for (i = 0; i < valor.length; ++i) {
+                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#TpCandiInf");
+                        }
+
+
+	                      $("#CommentInf").val(data['Comentarios adicionales'])
+
+                      }
+                    },
+                error:function(result) {
+                  Toastify({
+                    text: "El candidato fue contratado con anterioridad.",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
+                }
+              })
+        }
+    })
+  })
+
 $("#clear").on("click", function(e) {
         $("#email").val("");
 		    $("#emailCandidato").val("");
@@ -793,21 +937,22 @@ $("#clear").on("click", function(e) {
  });
 
  $("#clearInf").on("click", function(e) {
-        $("#EmailInf").val("");
-		    $("#EMailCandidatoInf").val("");
-		    $("#NombreyApellidodelCandidatoInf").val("");
-		    $("#LKCandiInf").val("");
-		    $("#IdsaEnviarInf").val("");
-		    $("#commentInf").val("");
-		    $("#EsSourceInf").val("");
-		    $("#NiveldeInglesInf").val("");
-		    $("#RemuneracionPretendidaMensualInf").val("");
-		    $("#LocacionInf").val("");
-		    $("#CommentInf").val("");
-		    $("#cvesp").val("");
-		    $("#cving").val("");
-		    $("#informeEntEsp").val("");
-		    $("#informeEntIng").val("");
+        $("#CommentInf").val("").prop("readonly", false);
+        $("#EsSourceInf").val("").prop("readonly", false);
+        $("#RemuneracionPretendidaMensualInf").val("").prop("readonly", false);
+        $("#NiveldeInglesInf").val("").prop("readonly", false);
+        $("#LocacionInf").val("").prop("readonly", false);
+        $("#cvesp").val("").prop("readonly", false);
+        $("#cving").val("").prop("readonly", false);
+        $("#TpCandiInf").val("").prop("readonly", false);
+        $("#TecnoCandiInf").val("").prop("readonly", false);
+        $("#informeEntEsp").val("").prop("readonly", false);
+        $("#informeEntIng").val("").prop("readonly", false);
+        $("#EmailInf").val(data['Email Address']).prop("readonly", false);
+        $("#EMailCandidatoInf").val(data['Email Candidato']).prop("readonly", false);
+        $("#NombreyApellidodelCandidatoInf").val(data['Nombre y Apellido del Candidato']).prop("readonly", false);
+        $("#LKCandiInf").val(data['Linkedin del Candidato']).prop("readonly", false);
+        $("#IdsaEnviarInf").val(data['IDs de reserva separdos con "_" sin la palabra "ID"']).prop("readonly", false);
 		     valores=document.querySelector('#minputInf').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
 	valores[i].remove();
