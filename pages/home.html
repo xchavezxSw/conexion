@@ -920,8 +920,8 @@ var anterior="";
   })
 
 $("#clear").on("click", function(e) {
-        $("#email").val("");
-		    $("#emailCandidato").val("");
+        $("#email").val("").prop("readonly", false);
+		    $("#emailCandidato").val('').prop("readonly", false);
 		    $("#naCandi").val("");
 		    $("#lkCandi").val("");
 		    $("#idReserva").val("");
@@ -934,6 +934,7 @@ $("#clear").on("click", function(e) {
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
+    
  });
 
  $("#clearInf").on("click", function(e) {
@@ -948,11 +949,11 @@ $("#clear").on("click", function(e) {
         $("#TecnoCandiInf").val("").prop("readonly", false);
         $("#informeEntEsp").val("").prop("readonly", false);
         $("#informeEntIng").val("").prop("readonly", false);
-        $("#EmailInf").val(data['Email Address']).prop("readonly", false);
-        $("#EMailCandidatoInf").val(data['Email Candidato']).prop("readonly", false);
-        $("#NombreyApellidodelCandidatoInf").val(data['Nombre y Apellido del Candidato']).prop("readonly", false);
-        $("#LKCandiInf").val(data['Linkedin del Candidato']).prop("readonly", false);
-        $("#IdsaEnviarInf").val(data['IDs de reserva separdos con "_" sin la palabra "ID"']).prop("readonly", false);
+        $("#EmailInf").val('').prop("readonly", false);
+        $("#EMailCandidatoInf").val('').prop("readonly", false);
+        $("#NombreyApellidodelCandidatoInf").val('').prop("readonly", false);
+        $("#LKCandiInf").val('').prop("readonly", false);
+        $("#IdsaEnviarInf").val('').prop("readonly", false);
 		     valores=document.querySelector('#minputInf').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
 	valores[i].remove();
