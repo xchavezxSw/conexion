@@ -1,7 +1,8 @@
 function login(){
+
     let user = document.getElementById('user').value
     let password = document.getElementById('password').value
-    
+
     if(user=='admin' && password=='admin'){
         location.href= "./pages/home.html";
     }else{
@@ -19,4 +20,5 @@ send.onclick =(e)=>{
     e.preventDefault()
     login()
 }
+
 

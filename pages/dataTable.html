@@ -31,9 +31,23 @@
             <table id="table_id" class="display tablaBusquedas">
                 <thead>
                     <tr>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 1</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 2</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Columna 2</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Prioridad</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Seniority</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Busqueda</th>
+                        <th style="text-align: center; background-color:#221969f7;" >ID</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Cliente</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Comision</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Tecnologia</th>
+                        <th style="text-align: center; background-color:#221969f7;" >KeyWords</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Zona</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Latam/Arg</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Remoto</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Relocación</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Sourcing (si/no)</th>
+                        <th style="text-align: center; background-color:#221969f7;" >NO VA</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Contratación</th>
+                        <th style="text-align: center; background-color:#221969f7;" >NO VA</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Nivel Inglés</th>
                     </tr>
                 </thead>
                 <tbody class="dataCol" >
@@ -60,10 +74,28 @@
         dataSrc: '',
         columns: [
     { "data": "Prioridad" },
+    { "data": "Seniority" },
     { "data": "Busqueda" },
-    { "data": "Busqueda" }
+    { "data": "ID" },
+    { "data": "Cliente" },
+    { "data": "Comision" },
+    { "data": "Tecnologia" },
+    { "data": "KeyWords" },
+    { "data": "Zona" },
+    { "data": "Latam/Arg" },
+    { "data": "remoto" },
+    { "data": "reloacion" },
+    { "data": "sourcing si/no" },
+    { "data": "no va" },
+    { "data": "contratacion" },
+    { "data": "no va" },
+    { "data": "nivel ingles" },
     ]
-      }
+      },
+         'columnDefs' : [
+
+        { 'visible': false, 'targets': [13,15] }
+    ]
     
     } )
     } );

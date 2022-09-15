@@ -189,6 +189,12 @@
     background-color:rgba(207, 42, 185, 0.678);
 
 }
+#psignOff, #psignOff{
+    color: white;
+}
+.singOff:hover{
+    text-decoration: none;
+}
 
 @media(max-width:478px){
     form{
