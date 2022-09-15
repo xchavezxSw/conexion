@@ -46,7 +46,7 @@
                 <div>
                   <div class="panel panel-primary">
                     <div class="panel-body text-center"  data-toggle="modal" data-target="#informe"  >
-                      <span class="glyphicon glyphicon-list-alt icon-big" aria-hidden="true"></span>
+                      <span class="glyphicon glyphicon-list icon-big" aria-hidden="true"></span>
                       <h3>Cargar Informe</h3>
                     </div>
                   </div>
@@ -56,6 +56,15 @@
                     <div class="panel-body text-center"  data-toggle="modal" data-target="#tablasInformes"  >
                       <span class="glyphicon glyphicon-list-alt icon-big" aria-hidden="true"></span>
                       <h3>Informes</h3>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="panel panel-primary">
+                    <div class="panel-body text-center"  data-toggle="modal" data-target="#cambioDeEstado"  >
+                      <span class="glyphicon 
+                      glyphicon glyphicon-hourglass icon-big" aria-hidden="true"></span>
+                      <h3>Cambio estado</h3>
                     </div>
                   </div>
                 </div>
@@ -88,6 +97,9 @@
       <h3 class="h3busq">Búsquedas de alta prioridad</h3>
     </div>
   </div>
+  <footer class="footer">
+    <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
+  </footer>
   <script>
     const listadoBusquedas = document.getElementById('listadoBusquedas')
     let i = 0
@@ -113,7 +125,7 @@
 
 
 
-  <div class="modal fade" id="reserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade  " id="reserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -223,7 +235,7 @@
       <div class="modal-footer">
         <button type="button" id="cierro" class="cierro" data-dismiss="modal">Cerrar</button>
         <button type="button" id="clear" class="clear" >Restablecer</button>
-        <button type="button" id="guardo" class="guardo">Guardar</button>
+        <button type="button"  id="guardo" class="guardo">Guardar</button>
       </div>
     </div>
   </div>
@@ -600,14 +612,179 @@
   </div>
 </div>
 
-<footer class="footer">
-  <p>2022 ConexionHR sistema </p>
-</footer>
+  <div class="modal fade  " id="reserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Solicitud de reserva</h4>
+      </div>
+      <div class="modal-body" style="color: black;">
+
+                    <div class="form-group">
+                        <label >Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Escribe tu email..." >
+                        <small id="emailHelp" class="form-text text-muted">Escribe tu email.</small>
+                    </div>
+                   <div class="form-group">
+                        <label >Email Candidato</label>
+                        <input type="email" class="form-control" id="emailCandidato" placeholder="Escribe el mail del candidato">
+                        <small id="emailCandHelp" class="form-text text-muted">Escribe el mail del candidato</small>
+                    </div>
+          <div class="form-group">
+                        <label >Nombre y Apellido del Candidato</label>
+                        <input type="naCandi" class="form-control" id="naCandi" placeholder="Escribe el Nombre y Apellido del Candidato">
+                        <small id="naCandiHelp" class="form-text text-muted">Escribe el Nombre y Apellido del Candidato</small>
+                    </div>
+         <div class="form-group">
+                        <label >Linkedin del Candidato</label>
+                        <input type="url" name="sitioweb" pattern=".+\.com" class="form-control" id="lkCandi" placeholder="Escribe el Linkedin del Candidato">
+                        <small id="lkCandiHelp" class="form-text text-muted">Escribe el Linkedin del Candidato</small>
+                    </div>
+           <div class="form-group">
+                        <label >ID de Reserva</label>
+                        <input type="idReserva" class="form-control" id="idReserva" placeholder="Escribe el Id de la reserva">
+                        <small id="idReservaHelp" class="form-text text-muted">Escribe el Id de la reserva, si son mas de uno separe por _</small>
+                    </div>
+              <div class="form-group">
+                        <label >Tecnologías que sabe el candidato</label>
+            <multi-input id="minput">
+               <input id="tcandiInput" list="tcandi" class="form-control" placeholder="Tecnologías que sabe el candidato">
+              <datalist id="tcandi">
+                   <option>.NET</option>
+                    <option>Android</option>
+                    <option>AWS</option>
+                    <option>C#</option>
+                    <option>C++</option>
+                    <option>GCP</option>
+                    <option>GO</option>
+                    <option>HTML</option>
+                    <option>IONIC</option>
+                    <option>iOS</option>
+                    <option>Java</option>
+                    <option>JavaScript (FE y BE)</option>
+                    <option>Kotlin</option>
+                    <option>Kubernetes</option>
+                    <option>Objective C</option>
+                    <option>Perl</option>
+                    <option>PHP</option>
+                    <option>Python</option>
+                    <option>R</option>
+                    <option>React Native</option>
+                    <option>Ruby</option>
+                    <option>Scala</option>
+                    <option>SQL</option>
+                    <option>Swift</option>
+                    <option>WEB3</option>
+                    <option>Xamarin</option>
+                    <option>Other…</option>
+              </datalist>
+    </multi-input>
+                    </div>
+          <div class="form-group">
+                        <label >Tipo de perfil del Candidato</label>
+            <multi-input id="tinput">
+                <input id="tperfilInput" list="tperfil" class="form-control" placeholder="Tipo de perfil del Candidato">
+              <datalist id="tperfil">
+                  <option>Analista Funcional</option>
+                  <option>Arquitecto</option>
+                  <option>BA</option>
+                  <option>BI</option>
+                  <option>Blockchain Developer</option>
+                  <option>Data Analyst</option>
+                  <option>Data Architect</option>
+                  <option>Data Engineer</option>
+                  <option>Data Science</option>
+                  <option>Developer Mobile</option>
+                  <option>DevOps</option>
+                  <option>ETL</option>
+                  <option>Infraestructura</option>
+                  <option>Lider Tecnico</option>
+                  <option>Machine Learning</option>
+                  <option>Mulesoft / Salesforce</option>
+                  <option>QA Automation</option>
+                  <option>QA Manual</option>
+                  <option>QC</option>
+                  <option>UI</option>
+                  <option>UX</option>
+                  <option>UXUI</option>
+                  <option>Web Developer</option>
+                  <option>Otro</option>
+              </datalist>
+    </multi-input>
+                    </div>
+              <div class="form-group">
+                        <label >Comentarios Adicionales</label>
+                        <input type="comment" class="form-control" id="comment" placeholder="Comentarios Adicionales">
+                        <small id="commentHelp" class="form-text text-muted"Comentarios Adicionales></small>
+                    </div>
+                </div>
+      <div class="modal-footer">
+        <button type="button" id="cierro" class="cierro" data-dismiss="modal">Cerrar</button>
+        <button type="button" id="clear" class="clear" >Restablecer</button>
+        <button type="button"  id="guardo" class="guardo">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade  " id="cambioDeEstado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Cambio de estado</h4>
+    </div>
+    <div class="modal-body" style="color: black;">
+
+                  <div class="form-group">
+                      <label >Email</label>
+                      <input type="email" class="form-control" id="emailSt" placeholder="Escribe tu email..." >
+                      <small id="emailHelp" class="form-text text-muted">Escribe tu email.</small>
+                  </div>
+                 <div class="form-group">
+                      <label >Email Candidato</label>
+                      <input type="email" class="form-control" id="emailCandidatoSt" placeholder="Escribe el mail del candidato">
+                      <small id="emailCandHelp" class="form-text text-muted">Escribe el mail del candidato</small>
+                  </div>
+        <div class="form-group">
+                      <label >ID</label>
+                      <input type="number" class="form-control" id="idSt" placeholder="Escribe el ID">
+                      <small id="naCandiHelp" class="form-text text-muted">Escribe el ID</small>
+                  </div>
+       <div class="form-group">
+                      <label >Status</label>
+                      <input type="text" class="form-control" id="statusSt" placeholder="Status">
+                      <small class="form-text text-muted">Status</small>
+                  </div>
+    <div class="modal-footer">
+      <button type="button" id="cancelar" class="cierro" data-dismiss="modal">Cancelar</button>
+      <button type="button"  id="confirmar" class="guardo">Confirmar</button>
+    </div>
+  </div>
+</div>
+</div>
 </body>
 </html>
 <script src="../js/multi-input.js">
 </script>
 <script>
+
+$("#").change(function() {
+      $.ajax({
+              type: "POST",
+              url: "http://181.13.244.170:5000/getCambioEstado",
+              data: {
+                    email: $("#").val()
+              },
+              success:function(){
+              },
+              error:function() {
+              }
+            })
+})
+
 $("#email").change(function() {
       $.ajax({
               type: "POST",
@@ -666,6 +843,7 @@ var anterior="";
                         for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
                         valoresperfil[i].remove();
                         }
+                        $("#guardo").attr('data-dismiss','modal');
                     $("#naCandi").val("");
                     $("#lkCandi").val("");
                     $("#idReserva").val("");
@@ -732,6 +910,7 @@ var anterior="";
                         for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
                         valoresperfil[i].remove();
                         }
+                        $("#guardo").attr('data-dismiss','modal');
                         $("#naCandi").val("");
                         $("#lkCandi").val("");
                         $("#idReserva").val("");
@@ -996,14 +1175,14 @@ $('#reserva').modal('toggle');
           tperfil: tperfil,
           comment: $("#comment").val(),
        },
-	     async: false,
+	     async: true,
 	    success:function(result) {
-		    $("#email").textContent='';
-		    $("#emailCandidato").textContent='';
-		    $("#naCandi").textContent='';
-		    $("#lkCandi").textContent='';
-		    $("#idReserva").textContent='';
-		    $("#comment").textContent='';
+		    $("#email").val('').prop('readonly',false);
+		    $("#emailCandidato").val('').prop('readonly',false);;
+		    $("#naCandi").val('');
+		    $("#idReserva").val('');
+		    $("#comment").val('');
+		    $("#lkcandi").val('');
     valores=document.querySelector('#minput').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
 	valores[i].remove();	     
@@ -1012,7 +1191,7 @@ $('#reserva').modal('toggle');
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
-	       $("#cierro").click()
+      
 	    },
         error:function(result) {
           Toastify({
@@ -1176,6 +1355,7 @@ if ( $("#EMailCandidatoInf").val()!= "")
 }
 }
 );
+
 
 
 </script>
