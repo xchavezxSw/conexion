@@ -11,6 +11,7 @@
     <link href="../css/bootstrap-sidebar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 </head>
 <body class="bodyInformes">
@@ -146,7 +147,10 @@
                       background: "#221969",
                     },
                   }).showToast();
-                  $('#tableInfRevisar').DataTable().ajax.reload();
+                $('#tableInfRevisar').DataTable().ajax.reload();
+                setInterval( function () {
+                    $('#tableInfRevisar').DataTable().ajax.reload(); // user paging is not reset on reload
+                    }, 30000 );
             }
         })
     })
@@ -193,11 +197,15 @@ $(document).ready(function () {
                       background: "#221969",
                     },
                   }).showToast();
-                  $('#tableInfRevisar').DataTable().ajax.reload();
+                $('#tableInfRevisar').DataTable().ajax.reload();
+                setInterval( function () {
+                    $('#tableInfRevisar').DataTable().ajax.reload(); // user paging is not reset on reload
+                    }, 30000 );
             }
         })
     })
 })
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
