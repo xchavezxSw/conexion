@@ -672,7 +672,8 @@ $("#emailCandidatoSt").focusout(function() {
               },
               success:function(data){
                 $("#emailSt").val(data[0][0]), 
-                $("#statusSt").val(data[0][3])
+               $("#idSt").val(data[0][2]), 
+		$("#statusSt").val(data[0][3])
               },
               error:function() {
               }
