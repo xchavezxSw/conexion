@@ -100,7 +100,12 @@
                 { "data": 'Motivo Rechazo' },
                 { "data": "<input type='checkbox'/>" },
 
-            ]}
+            ],
+             success: function(result){
+            $('#tableInfRevisar').DataTable().ajax.reload();
+            }
+
+            }
         });
     </script>
     <script>
@@ -141,7 +146,6 @@ $(document).ready(function () {
                 let td= $(this).closest("tr")   // Finds the closest row <tr>
                        .find("td")     // Gets a descendent with class="nr"
 
-                console.log(td)
                 $.ajax({type: "POST",
         url: "http://181.13.244.170:5000/revisarAprobado",
 	data: { 
