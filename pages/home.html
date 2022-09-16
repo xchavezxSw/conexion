@@ -823,8 +823,7 @@ $("#email").change(function() {
 })
 var anterior="";
  $("#emailCandidato").focusout(function() {
-     if (anterior=="" && $("#emailCandidato").val() != "")
-     {
+
         $.ajax({type: "POST",
                 url: "http://181.13.244.170:5000/Getreservas",
                 data: {
@@ -884,7 +883,7 @@ var anterior="";
                       background: "#221969",
                     },
                   }).showToast();
-                    }
+
                 })
   }
  $("#emailCandidato").change(function() {
