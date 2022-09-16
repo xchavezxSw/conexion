@@ -638,11 +638,17 @@ aria-hidden="true">
                       <input type="number" class="form-control" id="idSt" placeholder="Escribe el ID">
                       <small id="naCandiHelp" class="form-text text-muted">Escribe el ID</small>
                   </div>
-       <div class="form-group">
-                      <label >Status</label>
-                      <input type="text" class="form-control" id="statusSt" placeholder="Status">
-                      <small class="form-text text-muted">Status</small>
-                  </div>
+                  <div class="form-group">
+                    <label >Status</label><br>
+                    <input type="radio" name="status" id="statusSt" value="Enviado a Cliente" > Enviado a Cliente<br>
+                    <input type="radio" name="status" id="statusSt" value="Entrevista Con Cliente (no técnica)" > Entrevista Con Cliente (no técnica) <br>
+                    <input type="radio" name="status" id="statusSt" value="Entrevista Técnica" > Entrevista Técnica <br>
+                    <input type="radio" name="status" id="statusSt" value="Ejercicio Técnico" > Ejercicio Técnico <br>
+                    <input type="radio" name="status" id="statusSt" value="Trámites Ingreso" > Trámites Ingreso <br>
+                    <input type="radio" name="status" id="statusSt" value="Oferta" > Oferta<br>
+                    <input type="radio" name="status" id="statusSt" value="On Hold" > On Hold <br>
+                    <input type="radio" name="status" id="statusSt" value="Pre-Offer" > Pre-Offer <br>
+                </div>
     <div class="modal-footer">
       <button type="button" id="cancelar" class="cierro" data-dismiss="modal">Cancelar</button>
       <button type="button"  id="confirmar" class="guardo" data-dismiss="modal">Confirmar</button>
@@ -656,14 +662,16 @@ aria-hidden="true">
 </script>
 <script>
 
-$("#").change(function() {
+$("#emailCandidatoSt").onfocus(function() {
       $.ajax({
               type: "POST",
               url: "http://181.13.244.170:5000/getCambioEstado",
               data: {
-                    email: $("#").val()
+                emailCandidatoSt: $("#emailCandidatoSt").val(),
+                idSt: $("#idSt").val()
               },
               success:function(){
+                
               },
               error:function() {
               }
@@ -769,74 +777,6 @@ var anterior="";
                   }).showToast();
   }
                 })
-/*
- $("#emailCandidato").change(function() {
-    actual=$("#emailCandidato").val();
-    if (anterior != actual) 
-       {
-        anterior=actual;
-        $.ajax({type: "POST",
-                url: "http://181.13.244.170:5000/Getreservas",
-	            data: {
-                    emailCandidato: $("#emailCandidato").val()
-                      },
-                      success:function(data) {
-                      if (data.hasOwnProperty("datos")){
-                        return false
-                      }else{
-                      $("#email").val("");
-                     valores=document.querySelector('#minput').querySelectorAll(".item");
-                        for ( var i = 0, l = valores.length; i < l; i++ ) {
-                        valores[i].remove();
-                        }
-                        valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
-                        for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
-                        valoresperfil[i].remove();
-                        }
-                        $("#guardo").attr('data-dismiss','modal');
-                        $("#naCandi").val("");
-                        $("#lkCandi").val("");
-                        $("#idReserva").val("");
-                        $("#comment").val("");
-                        $("#email").val(data['Email Address']).prop('readonly',true);
-                        $("#emailCandidato").val(data['Email Candidato']).prop('readonly',true);
-                        $("#naCandi").val(data['Nombre y Apellido del Candidato'])
-	                      $("#lkCandi").val(data['Linkedin del Candidato'])
-	                      $("#idReserva").val(data['IDs de reserva separdos con "_" sin la palabra "ID"'])
-	                               valor=data['Tecnologías que sabe el candidato'].split(',')
-                        var i;
-                        for (i = 0; i < valor.length; ++i) {
-                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tcandiInput");
-                        }
-	                    valor=data['Tipo de perfil del Candidato'].split(',')
-                        var i;
-                        for (i = 0; i < valor.length; ++i) {
-                              $("<div class='item'>"+valor[i]+"<div>").insertBefore("#tperfilInput");
-                        }
-
-
-	                      $("#comment").val(data['Comentarios adicionales'])
-
-                      }
-                    },
-                error:function(result) {
-                  Toastify({
-                    text: "El candidato fue contratado con anterioridad.",
-                    duration: 3000,
-                    newWindow: true,
-                    close: true,
-                    gravity: "top",
-                    position: "center", 
-                    stopOnFocus: true, 
-                    style: {
-                      background: "#221969",
-                    },
-                  }).showToast();
-                }
-              })
-        }
-    }
-    )*/
   })
 
   //------------------------------------------------------------
