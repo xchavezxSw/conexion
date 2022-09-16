@@ -648,7 +648,7 @@ aria-hidden="true">
             <option   value="8" > Oferta</option>
             <option   value="9" > On Hold </option>
             <option   value="10" > Pre-Offer </option>
-            <option   value="11" > Ingresó</option>
+            <option   value="11" > Ingreso</option>
             <option   value="12" > Fuera de proceso</option>
 		</select>
 		  </div>
@@ -756,6 +756,58 @@ $("#emailCandidatoSt").focusout(function() {
               }
             })
 })
+
+$("#confirmar").on("click", function(e) {
+
+  $.ajax({type: "POST",
+        url: "http://181.13.244.170:5000/cambioEstado",
+	data: { 
+        emailSt: $('#emailSt').val(),
+        emailCandidatoSt: $('#emailCandidatoSt').val(),
+        idSt:$("#idSt").val(),
+        statusSt:$("#statusSt").val(),
+        descripcionSt:$("#descripcionSt").val(),
+        statusS3St:$("#statusS3St").val(),
+        salarioMensualOfrecidoClienteSt:$("#salarioMensualOfrecidoClienteSt").val(),
+        salarioMensualPretendidoSt:$("#salarioMensualPretendidoSt").val(),
+        motivoFinCandi:$("#motivoFinCandi").val(),
+        statusSt:$("#statusSt").val(),
+        statusSt:$("#statusSt").val(),
+        statusSt:$("#statusSt").val(),
+        statusSt:$("#statusSt").val(),
+       },
+	    success:function() {
+        Toastify({
+                    text: "Estado actualizado",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
+	    },
+        error:function() {
+          Toastify({
+                    text: "Ocurrió un error",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
+        }
+    }
+    )});
+
+
 $("#statusSt").change(function() {
       if(this.value==='11'){
         let seccion5 = document.getElementById('seccion5')
