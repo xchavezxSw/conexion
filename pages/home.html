@@ -662,7 +662,7 @@ aria-hidden="true">
 </script>
 <script>
 
-$("#emailCandidatoSt").onfocus(function() {
+$("#emailCandidatoSt").focusout(function() {
       $.ajax({
               type: "POST",
               url: "http://181.13.244.170:5000/getCambioEstado",
@@ -671,7 +671,8 @@ $("#emailCandidatoSt").onfocus(function() {
                 idSt: $("#idSt").val()
               },
               success:function(){
-                
+                $("#emailSt").val(data[0]), 
+                $("#statusSt").val(data[''])
               },
               error:function() {
               }
