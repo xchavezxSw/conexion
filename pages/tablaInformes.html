@@ -100,10 +100,7 @@
                 { "data": 'Motivo Rechazo' },
                 { "data": "<input type='checkbox'/>" },
 
-            ],
-             success: function(result){
-            $('#tableInfRevisar').DataTable().ajax.reload();
-            }
+            ]
 
             }
         });
@@ -136,7 +133,10 @@
         nombreCandiInf:td[17].textContent, 
         motivoRechInf:td[18].textContent, 
         status:'True',
-       }
+       },
+             success: function(result){
+            $('#tableInfRevisar').DataTable().ajax.reload();
+            }
         })
     })
 })
