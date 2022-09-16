@@ -978,17 +978,17 @@ var anterior="";
                         for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
                         valoresperfil[i].remove();
                         }
-                    $("#CommentInf").val("").prop("readonly", true);
-                    $("#EsSourceInf").val("").prop("readonly", true);
-                    $("#RemuneracionPretendidaMensualInf").val("").prop("readonly", true);
-                    $("#NiveldeInglesInf").val("").prop("readonly", true);
-                    $("#LocacionInf").val("").prop("readonly", true);
-                    $("#cvesp").val("").prop("readonly", true);
-                    $("#cving").val("").prop("readonly", true);
-                    $("#TpCandiInf").val("").prop("readonly", true);
-                    $("#TecnoCandiInf").val("").prop("readonly", true);
-                    $("#informeEntEsp").val("").prop("readonly", true);
-                    $("#informeEntIng").val("").prop("readonly", true);
+                    $("#CommentInf").val("").prop("readonly", false);
+                    $("#EsSourceInf").val("").prop("readonly", false);
+                    $("#RemuneracionPretendidaMensualInf").val("").prop("readonly", false);
+                    $("#NiveldeInglesInf").val("").prop("readonly", false);
+                    $("#LocacionInf").val("").prop("readonly", false);
+                    $("#cvesp").val("").prop("readonly", false);
+                    $("#cving").val("").prop("readonly", false);
+                    $("#TpCandiInf").val("").prop("readonly", false);
+                    $("#TecnoCandiInf").val("").prop("readonly", false);
+                    $("#informeEntEsp").val("").prop("readonly", false);
+                    $("#informeEntIng").val("").prop("readonly", false);
                     $("#EmailInf").val(data['Email Address']).prop("readonly", true);
                     $("#EMailCandidatoInf").val(data['Email Candidato']).prop("readonly", true);
                     $("#NombreyApellidodelCandidatoInf").val(data['Nombre y Apellido del Candidato']).prop("readonly", true);
@@ -1006,7 +1006,7 @@ var anterior="";
                     }
 
 
-                    $("#CommentInf").val(data['Comentarios adicionales']).prop("readonly", true);
+                    $("#CommentInf").val(data['Comentarios adicionales']).prop("readonly", false);
 
                   }
                     },
@@ -1049,22 +1049,22 @@ var anterior="";
                         for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
                         valoresperfil[i].remove();
                         }
-                        $("#CommentInf").val("").prop("readonly", true);
-                        $("#EsSourceInf").val("").prop("readonly", true);
-                        $("#RemuneracionPretendidaMensualInf").val("").prop("readonly", true);
-                        $("#NiveldeInglesInf").val("").prop("readonly", true);
-                        $("#LocacionInf").val("").prop("readonly", true);
-                        $("#cvesp").val("").prop("readonly", true);
-                        $("#cving").val("").prop("readonly", true);
-                        $("#TpCandiInf").val("").prop("readonly", true);
-                        $("#TecnoCandiInf").val("").prop("readonly", true);
-                        $("#informeEntEsp").val("").prop("readonly", true);
-                        $("#informeEntIng").val("").prop("readonly", true);
-                        $("#EmailInf").val(data['Email Address']).prop("readonly", true);
-                        $("#EMailCandidatoInf").val(data['Email Candidato']).prop("readonly", true);
-                        $("#NombreyApellidodelCandidatoInf").val(data['Nombre y Apellido del Candidato']).prop("readonly", true);
-                        $("#LKCandiInf").val(data['Linkedin del Candidato']).prop("readonly", true);
-                        $("#IdsaEnviarInf").val(data['IDs de reserva separdos con "_" sin la palabra "ID"']).prop("readonly", true);
+                         $("#CommentInf").val("").prop("readonly", false);
+                    $("#EsSourceInf").val("").prop("readonly", false);
+                    $("#RemuneracionPretendidaMensualInf").val("").prop("readonly", false);
+                    $("#NiveldeInglesInf").val("").prop("readonly", false);
+                    $("#LocacionInf").val("").prop("readonly", false);
+                    $("#cvesp").val("").prop("readonly", false);
+                    $("#cving").val("").prop("readonly", false);
+                    $("#TpCandiInf").val("").prop("readonly", false);
+                    $("#TecnoCandiInf").val("").prop("readonly", false);
+                    $("#informeEntEsp").val("").prop("readonly", false);
+                    $("#informeEntIng").val("").prop("readonly", false);
+                    $("#EmailInf").val(data['Email Address']).prop("readonly", true);
+                    $("#EMailCandidatoInf").val(data['Email Candidato']).prop("readonly", true);
+                    $("#NombreyApellidodelCandidatoInf").val(data['Nombre y Apellido del Candidato']).prop("readonly", true);
+                    $("#LKCandiInf").val(data['Linkedin del Candidato']).prop("readonly", true);
+                    $("#IdsaEnviarInf").val(data['IDs de reserva separdos con "_" sin la palabra "ID"']).prop("readonly", true);
 	                               valor=data['Tecnologías que sabe el candidato'].split(',')
                         var i;
                         for (i = 0; i < valor.length; ++i) {
