@@ -235,7 +235,7 @@
       <div class="modal-footer">
         <button type="button" id="cierro" class="cierro" data-dismiss="modal">Cerrar</button>
         <button type="button" id="clear" class="clear" >Restablecer</button>
-        <button type="button"  id="guardo" class="guardo">Guardar</button>
+        <button type="button"  id="guardo" class="guardo" data-dismiss="modal">Guardar</button>
       </div>
     </div>
   </div>
@@ -842,7 +842,6 @@ var anterior="";
                         for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
                         valoresperfil[i].remove();
                         }
-                        $("#guardo").attr('data-dismiss','modal');
                     $("#naCandi").val("");
                     $("#lkCandi").val("");
                     $("#idReserva").val("");
