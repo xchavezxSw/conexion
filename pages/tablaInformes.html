@@ -101,7 +101,6 @@
                 { "data": "<input type='checkbox'/>" },
 
             ]
-
             }
         });
     </script>
@@ -134,8 +133,20 @@
         motivoRechInf:td[18].textContent, 
         status:'True',
        },
-             success: function(result){
+        success: function(result){
             $('#tableInfRevisar').DataTable().ajax.reload();
+            Toastify({
+                    text: "Candidato aprobado",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
             }
         })
     })
