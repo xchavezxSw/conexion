@@ -1145,7 +1145,6 @@ $("#guardoInf").on("click", function(e) {
 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf").val() ))
 {
-$('#informe').modal('toggle');
     e.preventDefault();
     multiinput= Array();
     valores=document.querySelector('#minputInf').querySelectorAll(".item")
@@ -1203,7 +1202,6 @@ $('#informe').modal('toggle');
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
-	       $("#cierroInf").click()
 	    },
         error:function(result) {
           Toastify({
