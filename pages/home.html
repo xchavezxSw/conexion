@@ -670,9 +670,9 @@ $("#emailCandidatoSt").focusout(function() {
                 emailCandidatoSt: $("#emailCandidatoSt").val(),
                 idSt: $("#idSt").val()
               },
-              success:function(){
-                $("#emailSt").val(data[0]), 
-                $("#statusSt").val(data[''])
+              success:function(data){
+                $("#emailSt").val(data[0][0]), 
+                $("#statusSt").val(data[0][3])
               },
               error:function() {
               }
