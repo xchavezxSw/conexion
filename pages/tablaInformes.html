@@ -134,7 +134,6 @@
         status:'True',
        },
         success: function(result){
-            $('#tableInfRevisar').DataTable().ajax.reload();
             Toastify({
                     text: "Candidato aprobado",
                     duration: 3000,
@@ -147,6 +146,7 @@
                       background: "#221969",
                     },
                   }).showToast();
+                  $('#tableInfRevisar').DataTable().ajax.reload();
             }
         })
     })
@@ -181,7 +181,6 @@ $(document).ready(function () {
         status:'False',
        },
              success: function(result){
-            $('#tableInfRevisar').DataTable().ajax.reload();
             Toastify({
                     text: "Candidato rechazado",
                     duration: 3000,
@@ -194,6 +193,7 @@ $(document).ready(function () {
                       background: "#221969",
                     },
                   }).showToast();
+                  $('#tableInfRevisar').DataTable().ajax.reload();
             }
         })
     })
