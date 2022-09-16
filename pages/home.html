@@ -1201,6 +1201,18 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
+    Toastify({
+          text: "¡Informe cargado exitosamente!",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top",
+          position: "center", 
+          stopOnFocus: true, 
+          style: {
+            background: "#221969",
+          },
+        }).showToast();
 	    },
         error:function(result) {
           Toastify({
