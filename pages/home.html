@@ -640,15 +640,17 @@ aria-hidden="true">
                   </div>
                   <div class="form-group">
                     <label >Status</label><br>
-                    <input type="radio" name="status" id="statusSt" value="Enviado a Cliente" > Enviado a Cliente<br>
-                    <input type="radio" name="status" id="statusSt" value="Entrevista Con Cliente (no técnica)" > Entrevista Con Cliente (no técnica) <br>
-                    <input type="radio" name="status" id="statusSt" value="Entrevista Técnica" > Entrevista Técnica <br>
-                    <input type="radio" name="status" id="statusSt" value="Ejercicio Técnico" > Ejercicio Técnico <br>
-                    <input type="radio" name="status" id="statusSt" value="Trámites Ingreso" > Trámites Ingreso <br>
-                    <input type="radio" name="status" id="statusSt" value="Oferta" > Oferta<br>
-                    <input type="radio" name="status" id="statusSt" value="On Hold" > On Hold <br>
-                    <input type="radio" name="status" id="statusSt" value="Pre-Offer" > Pre-Offer <br>
-                </div>
+		  <select  id="statusSt" name="status" >
+   					<option  value="3" > Enviado a Cliente</option>
+                    <option    value="4" > Entrevista Con Cliente (no técnica) </option>
+                    <option    value="5" > Entrevista Técnica </option>
+                    <option    value="6" > Ejercicio Técnico </option>
+                    <option    value="7" > Trámites Ingreso </option>
+                    <option    value="8" > Oferta</option>
+                    <option    value="9" > On Hold </option>
+                    <option    value="10" > Pre-Offer </option>
+		</select>
+		  </div>
     <div class="modal-footer">
       <button type="button" id="cancelar" class="cierro" data-dismiss="modal">Cancelar</button>
       <button type="button"  id="confirmar" class="guardo" data-dismiss="modal">Confirmar</button>
