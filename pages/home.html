@@ -1035,7 +1035,6 @@ $("#guardo").on("click", function(e) {
 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val() ))
 {
-$('#reserva').modal('toggle');
     e.preventDefault();
     multiinput= Array();
     valores=document.querySelector('#minput').querySelectorAll(".item")

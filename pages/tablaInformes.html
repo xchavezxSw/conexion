@@ -182,6 +182,18 @@ $(document).ready(function () {
        },
              success: function(result){
             $('#tableInfRevisar').DataTable().ajax.reload();
+            Toastify({
+                    text: "Candidato rechazado",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center", 
+                    stopOnFocus: true, 
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
             }
         })
     })
