@@ -195,6 +195,12 @@
 .singOff:hover{
     text-decoration: none;
 }
+.seccion2,.seccion3,.seccion4,.seccion5{
+    display: none;
+}
+.seccion5D,.seccion2D,.seccion3D,.seccion4D{
+    display: block;
+}
 
 @media(max-width:478px){
     form{

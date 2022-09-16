@@ -652,26 +652,29 @@ aria-hidden="true">
             <option   value="12" > Fuera de proceso</option>
 		</select>
 		  </div>
-      <div class="form-group"  style="display:flex; flex-direction:column  ">
-       <label for="descripcion">Descripcion</label>
-       <input type="text" id="descripcionSt" class="form-control" placeholder="Descripción"> 
-</div>
-<div class="form-group">
-  <label >Proceso finalizado por:</label><br>
-<select  id="statusSt" name="status" >
-<option   value="Cliente" > Cliente </option>
-<option   value="Candidato" > Candidato </option>
-<option   value="Conexión" > Conexión </option>
-</select>
-</div>
-<div class="form-group"  style="display:flex; flex-direction:column  ">
-  <label for="">Salario mensual ofrecido por cliente</label>
-  <input type="text" id="salarioMensualOfrecidoClienteSt" class="form-control" placeholder="Salario mensual ofrecido por cliente"> 
-</div>
-<div class="form-group"  style="display:flex; flex-direction:column  ">
-  <label for="">Salario mensual pretendido por el candidato</label>
-  <input type="text" id="salarioMensualPretendidoSt" class="form-control" placeholder="Salario mensual pretendido por el candidato"> 
-</div>
+      <div class="seccion2" id="seccion2">
+        <div class="form-group"  style="display:flex; flex-direction:column  ">
+          <label for="descripcion">Descripcion</label>
+          <input type="text" id="descripcionSt" class="form-control" placeholder="Descripción"> 
+   </div>
+   <div class="form-group">
+     <label >Proceso finalizado por:</label><br>
+   <select  id="statusS3St" name="status" >
+   <option   value="Cliente" > Cliente </option>
+   <option   value="Candidato" > Candidato </option>
+   <option   value="Conexión" > Conexión </option>
+   </select>
+   </div>
+   <div class="form-group"  style="display:flex; flex-direction:column  ">
+     <label for="">Salario mensual ofrecido por cliente</label>
+     <input type="text" id="salarioMensualOfrecidoClienteSt" class="form-control" placeholder="Salario mensual ofrecido por cliente"> 
+   </div>
+   <div class="form-group"  style="display:flex; flex-direction:column  ">
+     <label for="">Salario mensual pretendido por el candidato</label>
+     <input type="text" id="salarioMensualPretendidoSt" class="form-control" placeholder="Salario mensual pretendido por el candidato"> 
+   </div>
+      </div>
+      <div class="seccion3" id="seccion3">
 <div class="form-group">
   <label >Motivo finalización candidato:</label><br>
   <select id="motivoFinCandi">
@@ -685,10 +688,11 @@ aria-hidden="true">
     <option value="Otro" > Otro </option>
     </select>
 </div>
+</div>
+<div class="seccion3" id="seccion4">
 <div class="form-group">
   <label >Motivo finalización cliente:</label><br>
   <select id="motivoFinCliente">
-    <option  value="Question Type" > Question Type </option>
     <option  value="Seniority" > Seniority </option>
     <option  value="Fit Cultural" > Fit Cultural </option>
     <option  value="Remuneración pretendida del candidato" > Remuneración pretendida del candidato </option>
@@ -707,6 +711,8 @@ aria-hidden="true">
     <option  value="Otro" > Otro </option>
     </select>
 </div>
+</div>
+<div class="seccion5" id="seccion5">
 <div class="form-group"  style="display:flex; flex-direction:column  ">
   <label for="">Salario mensual acordado</label>
   <input type="text" id="salarioMensualAcordadoSt" class="form-control" placeholder="Salario mensual acordado"> 
@@ -718,6 +724,7 @@ aria-hidden="true">
 <div class="form-group"  style="display:flex; flex-direction:column  ">
   <label for="">Comentarios</label>
   <input type="text" id="comentariosSt"  placeholder="Comentarios" class="form-control" > 
+</div>
 </div>
     <div class="modal-footer">
       <button type="button" id="cancelar" class="cierro" data-dismiss="modal">Cancelar</button>
@@ -751,8 +758,40 @@ $("#emailCandidatoSt").focusout(function() {
 })
 $("#statusSt").change(function() {
       if(this.value==='11'){
+        let seccion5 = document.getElementById('seccion5')
+        seccion5.classList.add('seccion5D')
+      }else{
+        seccion5.classList.remove('seccion5D')
+      }
 
-}})
+      if(this.value==='12'){
+        let seccion2 = document.getElementById('seccion2')
+        let seccion4 = document.getElementById('seccion4')
+        seccion2.classList.add('seccion2D')
+        seccion4.classList.add('seccion4D')
+      }else{
+        let seccion3 = document.getElementById('seccion3')
+        seccion2.classList.remove('seccion2D')
+        seccion4.classList.remove('seccion4D')
+        seccion3.classList.remove('seccion3D')
+      }
+})
+$("#statusS3St").change(function() {
+    val = $('#statusSt').val()
+      if(this.value==='Candidato' && (val==='11' || val==='12')  ){
+        let seccion3 = document.getElementById('seccion3')
+        seccion3.classList.add('seccion3D')
+      }else{
+        seccion3.classList.remove('seccion3D')
+      }
+
+      if(this.value==='Cliente' && (val==='11' || val==='12') ){
+        let seccion4 = document.getElementById('seccion4')
+        seccion4.classList.add('seccion4D')
+      }else{
+        seccion4.classList.remove('seccion4D')
+      }
+})
 
 
 
