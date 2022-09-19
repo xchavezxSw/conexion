@@ -843,6 +843,11 @@ var anterior="";
                 data: {
                         emailCandidato: $("#emailCandidato").val()
                       },
+                statusCode: {
+                  502: function(xhr) {
+                    if(window.console) console.log(xhr.responseText);
+                  }
+                },
                 success:function(data) {
                   if (data.hasOwnProperty("datos")){
                     return false
