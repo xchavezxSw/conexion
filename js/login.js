@@ -4,7 +4,20 @@ function login(){
     let password = document.getElementById('password').value
 
     if(user=='admin' && password=='admin'){
-        location.href= "http://181.13.244.170:5000/setcookie";
+        $("#emailCandidatoSt").focusout(function() {
+            $.ajax({
+                    type: "POST",
+                    url: "",
+                    data: {
+                      emailCandidatoSt: 
+                      idSt: 
+                    },
+                    success:function(){
+                    },
+                    error:function() {
+                    }
+                  })
+      })
     }else{
         Swal.fire({
             icon: 'error',
@@ -20,6 +33,7 @@ send.onclick =(e)=>{
     e.preventDefault()
     login()
 }
+
 
 
 

@@ -23,13 +23,13 @@
   </header>
   <main>
     
-    <form class="formInicioSesion" id="form" action="">
+    <form class="formInicioSesion" id="form" action="http://181.13.244.170:5000/setcookie" method="POST">
       <h2 class="titleForm">Iniciar sesión</h2>
   
       <label class="labelForm" for="user">Usuario</label><br>
-      <input class="inputForm" type="text" id="user"><br>
+      <input name="user" class="inputForm" type="text" id="user"><br>
       <label class="labelForm" for="password">Contraseña</label><br>
-      <input class="inputForm" type="password" id="password"><br>
+      <input name="password" class="inputForm" type="password" id="password"><br>
       <button class="sendForm" id="send"> Ingresar </button>
       
     </form>
@@ -37,8 +37,30 @@
   <footer class="footer">
     <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
   </footer>
-  <script src="./js/login.js"></script>
+
+  <!-- <script src="./js/login.js"></script> -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+    $("#send").click(function() {
+          $.ajax({
+                  type: "POST",
+                  url: "http://181.13.244.170:5000/setcookie",
+                  data: {
+                    user: $("#user").val(),
+                    password: $("#password").val()
+                  },
+                  success:function(){
+                    location.href = 'http://127.0.0.1:5500/Conexi%C3%B3n/conexion/pages/home.html'
+                  },
+                  error:function() {
+                  }
+                })
+    })
+
+
+  </script>
 </body>
 </html>
 
