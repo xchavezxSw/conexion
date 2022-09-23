@@ -43,7 +43,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script>
-
+    document.cookie = ""
     $("#send").click(function() {
           $.ajax({
                   type: "POST",
@@ -51,8 +51,9 @@
                   data: {
                     user: $("#user").val(),
                     password: $("#password").val()
-                  },success:function(){
-                  location.href="http://181.13.244.170:5010/conexion/pages/home.html"
+                  },success:function(data){
+                  	document.cookie = "userID="+data[2];
+			location.href="http://181.13.244.170:5010/conexion/pages/home.html"
               },
               error:function() {
                 Swal.fire(
