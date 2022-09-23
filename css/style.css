@@ -152,8 +152,8 @@
     display: flex;
     align-items: center;
     background-color: rgba(128, 128, 128, 0.146);
-    width: 80%;
-    margin-left: 10%;
+    width: 99%;
+    margin-left: .5%;
     border-radius: 10px;
 }
 .h3busq{

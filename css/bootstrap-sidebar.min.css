@@ -7,7 +7,7 @@ body{font-family: 'Ubuntu', sans-serif;background-color: rgb(253, 251, 246);}
 .navbar{background-color: #221969; display: flex; justify-content: space-between;padding: 15px;} .glyphicon{font-size: 20px;}
 .panel-primary{display: flex; align-items: center;justify-content: space-evenly; width: 300px; height: 150px; margin:4px;
 cursor: pointer;}#feature-content .panel:hover{background-color:rgba(207, 42, 185, 0.678);color:#fff}
-.Aplications{font-weight: bold;margin-top:100px; color: white; width:80%; padding:10px;}
+.Aplications{font-weight: bold;margin-top:80px; color: white; width:100%; padding-top:20px;}
 li{text-indent:10px;line-height:10px;margin-bottom:10px;
 padding-bottom:5px}.buttonOff{list-style: none;margin-top: 17px; margin-right: 15px;}
 .sidebar-nav li a{text-decoration:none;color:#fcfff5}.sidebar-nav li a:hover{text-decoration:none;opacity:.5}.sidebar-nav li
