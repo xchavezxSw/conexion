@@ -1407,17 +1407,17 @@ data: {
 </script>
 <script>
 
-
-
   $.ajax({
           type: "get",
-          url: "http://181.13.244.170:5000/getcookie",
+          url: "http://conexion.techne.net.ar:5000/getcookie",
           success:function(data){
             console.log(data)
+            $('#bienvenido').val('Bienvenido');
           },
           error:function() {
           }
         })
+
 
 
 </script>
