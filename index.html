@@ -6,6 +6,7 @@
   <link rel="shortcut icon" href="https://conexion-hr.com/wp-content/uploads/2022/04/conexion-hr-favicon.png" sizes="32x32">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-signin-client_id" content="1092175970858-c28h8pkfhfulrniq8s9pqiv61g320svg.apps.googleusercontent.com">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <link rel="stylesheet" href="./css/style.css">
   <title>Conexion Capp 3.0</title>
@@ -23,7 +24,7 @@
   </header>
   <main>
     
-    <form class="formInicioSesion" id="form" action="http://181.13.244.170:5000/setcookie" method="POST">
+    <div class="formInicioSesion" id="form" method="" >
       <h2 class="titleForm">Iniciar sesión</h2>
   
       <label class="labelForm" for="user">Usuario</label><br>
@@ -32,7 +33,7 @@
       <input name="password" class="inputForm" type="password" id="password"><br>
       <button class="sendForm" id="send"> Ingresar </button>
       
-    </form>
+    </div>
   </main>
   <footer class="footer">
     <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
@@ -50,16 +51,14 @@
                   data: {
                     user: $("#user").val(),
                     password: $("#password").val()
-                  },
-                  success:function(){
-                    location.href = 'http://127.0.0.1:5500/Conexi%C3%B3n/conexion/pages/home.html'
-                  },
-                  error:function() {
-                  }
-                })
-    })
-
-
+                  },success:function(){
+                  location.href="http://conexion.techne.net.ar/conexion/pages/home.html"
+              },
+              error:function() {
+                 alert("usuario o password incorrecto")
+              }
+            })
+})
   </script>
 </body>
 </html>
