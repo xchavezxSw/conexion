@@ -47,12 +47,12 @@
     $("#send").click(function() {
           $.ajax({
                   type: "POST",
-                  url: "http://conexion.techne.net.ar:5000/setcookie",
+                  url: "http://181.13.244.170:5000/setcookie",
                   data: {
                     user: $("#user").val(),
                     password: $("#password").val()
                   },success:function(){
-                  location.href="http://conexion.techne.net.ar/conexion/pages/home.html"
+                  location.href="http://181.13.244.170:5010/conexion/pages/home.html"
               },
               error:function() {
                 Swal.fire(
