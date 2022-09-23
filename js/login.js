@@ -4,7 +4,7 @@ function login(){
     let password = document.getElementById('password').value
 
     if(user=='admin' && password=='admin'){
-        location.href= "./pages/home.html";
+        location.href= "http://181.13.244.170:5000/setcookie";
     }else{
         Swal.fire({
             icon: 'error',
@@ -20,5 +20,7 @@ send.onclick =(e)=>{
     e.preventDefault()
     login()
 }
+
+
 
 
