@@ -55,7 +55,15 @@
                   location.href="http://conexion.techne.net.ar/conexion/pages/home.html"
               },
               error:function() {
-                 alert("usuario o password incorrecto")
+                Swal.fire(
+                {
+                  icon: 'error',
+                  title: ' Usuario o contraseña incorrectos.',
+                  showConfirmButton: false,
+                  timer:1500,
+                  
+                }
+                )
               }
             })
 })
