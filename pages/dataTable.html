@@ -76,10 +76,16 @@
     </main>
     
     <script>
+    function getCookie(name) {
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        userid=getCookie("userID")
     $(document).ready( function () {
         $('#table_id').DataTable({
       "ajax": {
-        "url": "http://181.13.244.170:5000/busquedas",
+        "url": "http://181.13.244.170:5000/busquedas?usuario="+userid,
         dataSrc: '',
         columns: [
     { "data": "Prioridad" },
