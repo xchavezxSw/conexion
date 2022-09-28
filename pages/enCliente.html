@@ -64,10 +64,12 @@
         <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
       </footer>
       <script>
+        userid=getCookie("userID")
         $(document).ready( function () {
             $('#tableEnCliente').DataTable({
           "ajax": {
             "url": "http://181.13.244.170:5000/getCliente",
+            data: { usuario:userid},
             dataSrc: '',
             columns: [
         { "data": "EmailAddres" },
