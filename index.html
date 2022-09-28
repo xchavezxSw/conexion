@@ -53,7 +53,7 @@
                     password: $("#password").val()
                   },success:function(data){
 
-                  document.cookie = "rol="+data[1]+";"+"userID="+data[2]
+                  document.cookie = "rol="+data[1]+";"+"userID="+data[2];
 			location.href="http://181.13.244.170:5010/conexion/pages/home.html"
               },
               error:function() {
