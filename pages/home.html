@@ -23,9 +23,9 @@
         <div class="navbar-header">
           <a href="home.html"><img class="logo" src="https://conexion-hr.com/wp-content/uploads/2022/01/conexion-hr-w-bb-300x47.png" alt="logo"></a>
         </div>
-        <ul class="buttonOff">
+        <ul class="buttonOff" id="singOffAndButton">
           <li class="dropdown singOffAndButtonOff">
-             <a class="singOff" href="../index.html"><span class="salir glyphicon glyphicon-off" style="color: white;" aria-hidden="true"></span></a>
+             <a class="singOff"><span class="salir glyphicon glyphicon-off" style="color: white;" aria-hidden="true"></span></a>
           </li>
         </ul>
     </nav>
@@ -1335,7 +1335,6 @@ if ( $("#EMailCandidatoInf").val()!= "")
 }
 }
 );
-
 $("#confirmar").on("click", function(e) {
 
 $.ajax({type: "POST",
@@ -1437,6 +1436,12 @@ $('#metricas').hide();
 }
 if (document.cookie ==='')
 {
+location.href='http://conexion.techne.net.ar/conexion/'
+}
+
+
+$("#singOffAndButton").on("click", function(e) {
+document.cookie=''
 location.href='http://conexion.techne.net.ar/conexion/'
 }
 </script>
