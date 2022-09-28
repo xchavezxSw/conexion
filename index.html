@@ -52,7 +52,7 @@
                     user: $("#user").val(),
                     password: $("#password").val()
                   },success:function(data){
-                  	document.cookie = "userID="+data[2];
+                  	document.cookie = "userID="+data[2]+";"+"rol="+data[3];
 			location.href="http://181.13.244.170:5010/conexion/pages/home.html"
               },
               error:function() {
