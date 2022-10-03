@@ -44,7 +44,8 @@
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script>
     document.cookie = ""
-    $("#send").click(function() {
+    $("#send").click(function(event) {
+          event.preventDefault();
           $.ajax({
                   type: "POST",
                   url: "http://181.13.244.170:5000/setcookie",
