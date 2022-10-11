@@ -48,6 +48,7 @@
           event.preventDefault();
           $.ajax({
                   type: "POST",
+                  async: false,
                   url: "http://181.13.244.170:5000/setcookie",
                   timeout : 900,
                   data: {
