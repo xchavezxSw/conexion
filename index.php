@@ -13,17 +13,17 @@ echo $sql;
 
  if ($result = $mysqli -> query($sql)) {
   while ($row = $result -> fetch_row()) {
-    echo $row[1];
+    echo $row;
   }
   $result -> free_result();
 }
 
 $mysqli -> close();
-        if (mysqli_num_rows($result) === 1) {
+
         setcookie('userID', $usuario);
         setcookie('rol', $row[1]);
 
- }
+
   }
 ?>
 <!DOCTYPE html>
