@@ -9,10 +9,7 @@ if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
 $contrasena=$_POST["password"];
-
-
-        $result = mysqli_query($conn, $sql);
-        echo mysqli_result($result);
+        echo var_dump($result);
         if (mysqli_num_rows($result) === 1) {
         setcookie('userID', $usuario);
         setcookie('rol', $row[1]);
