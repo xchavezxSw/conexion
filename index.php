@@ -2,7 +2,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-$mysqli = mysqli_connect("localhost", "root", "Oracle50", "conexion");
+$mysqli = mysqli("localhost", "root", "Oracle50", "conexion");
 
 
 if (isset($_POST["user"]))
