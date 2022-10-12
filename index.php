@@ -2,7 +2,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-$conn = mysqli_connect("localhost", "root", "Oracle50", "conexion");
+$mysqli = mysqli_connect("localhost", "root", "Oracle50", "conexion");
 
 
 if (isset($_POST["user"]))
@@ -12,7 +12,7 @@ $contrasena=$_POST["password"];
 $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role";
 echo $sql;
 
-        if ($result = $mysqli -> query($sql)) {
+ if ($result = $mysqli -> query($sql)) {
   while ($row = $result -> fetch_row()) {
     echo $row[1];
   }
