@@ -13,8 +13,8 @@ $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and 
         $row = mysql_fetch_row($result);
         if (mysqli_num_rows($result) === 1) {
         setcookie('userID', $usuario);
-        setcookie('rol', $row[1])
-        header("location:","http://conexion.techne.net.ar/conexion/pages/home.html")
+        setcookie('rol', $row[1]);
+        header("location:","http://conexion.techne.net.ar/conexion/pages/home.html");
  }
   }
 ?>
