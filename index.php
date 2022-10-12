@@ -3,8 +3,13 @@
 session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
+     header("Location: http://conexion.techne.net.ar/conexion/pages/home.html");
  ?>
+
+<?php
+
+}else{
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +35,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     </nav>
   </header>
   <main>
-    
+
     <div class="formInicioSesion" id="form" method="" >
       <h2 class="titleForm">Iniciar sesión</h2>
        <form>
@@ -46,18 +51,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
   </footer>
 
-  <script src="./js/login.js"></script> 
+  <script src="./js/login.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
 </body>
 </html>
 
-<?php
-
-}else{
-
-     header("Location: index.php");
 
      exit();
 
