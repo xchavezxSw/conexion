@@ -3,12 +3,8 @@
 session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-     header("Location: http://conexion.techne.net.ar/conexion/pages/home.html");
+
  ?>
-
-<?php
-
-}else{
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,8 +53,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 </body>
 </html>
+<?php
 
-
-     exit();
+}else{
+header("Location: http://conexion.techne.net.ar/conexion/pages/home.html");
+exit();
 
 }
