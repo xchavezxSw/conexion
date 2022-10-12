@@ -3,6 +3,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 $conn = mysqli_connect("localhost", "root", "Oracle50", "conexion");
+if (isset($_POST["user"]))
+{
 $usuario=$_POST["user"];
 $password=$_POST["user"];
 $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
@@ -10,9 +12,9 @@ $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and 
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) === 1) {
-
+echo "login"
  }
-echo $_POST['user'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
