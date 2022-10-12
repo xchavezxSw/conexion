@@ -12,7 +12,7 @@ $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and 
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) === 1) {
-echo "login"
+echo "login";
  }
   }
 ?>
