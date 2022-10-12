@@ -6,6 +6,15 @@ $conn = mysqli_connect("localhost", "root", "Oracle50", "conexion");
 $mysqli = new mysqli("localhost", "root", "Oracle50", "conexion");
 $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
 $result = mysqli_query($conn, $sql);
+
+if ($result = $mysqli -> query($sql)) {
+  while ($row = $result -> fetch_row()) {
+    printf ("%s (%s)\n", $row[0], $row[1]);
+  }
+  $result -> free_result();
+}
+
+$mysqli -> close();
 if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
