@@ -9,8 +9,9 @@ if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
 $contrasena=$_POST["password"];
-$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
-        echo var_dump($result);
+$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role";
+echo $sql;
+
         if ($result = $mysqli -> query($sql)) {
   while ($row = $result -> fetch_row()) {
     echo $row[1];
