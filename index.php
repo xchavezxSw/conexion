@@ -3,12 +3,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 $conn = mysqli_connect("localhost", "root", "Oracle50", "conexion");
-$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
+
 
 if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
 $contrasena=$_POST["password"];
+$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
         echo var_dump($result);
         if ($result = $mysqli -> query($sql)) {
   while ($row = $result -> fetch_row()) {
