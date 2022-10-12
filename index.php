@@ -1,5 +1,7 @@
 
-
+<?php
+echo $_POST['user'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +30,7 @@
 
     <div class="formInicioSesion" id="form" method="" >
       <h2 class="titleForm">Iniciar sesión</h2>
-       <form>
+       <form method="post" action="index.php">
       <label class="labelForm" for="user">Usuario</label><br>
       <input name="user" class="inputForm" type="text" id="user"><br>
       <label class="labelForm" for="password">Contraseña</label><br>
