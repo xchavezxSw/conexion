@@ -9,7 +9,7 @@ $result = mysqli_query($conn, $sql);
 
 if ($result = $mysqli -> query($sql)) {
   while ($row = $result -> fetch_row()) {
-    echo $row[1]
+    echo $row[1];
   }
   $result -> free_result();
 }
