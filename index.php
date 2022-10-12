@@ -1,5 +1,5 @@
 <?php
-
+echo isset($_SESSION['id'];
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 session_start();
  ?>
