@@ -2,18 +2,22 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-$conn = mysqli("localhost", "root", "Oracle50", "conexion");
+$conn = mysqli_connect("localhost", "root", "Oracle50", "conexion");
+$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
+$result = mysqli_query($conn, $sql);
 if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
 $contrasena=$_POST["password"];
-$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
 
-        $result = $mysqli->query($sql);
-       while ($row = $result->fetch_row()) {
-    printf("%s (%s)\n", $row[0], $row[1]);
-}
 
+        $result = mysqli_query($conn, $sql);
+        echo mysqli_result($result);
+        if (mysqli_num_rows($result) === 1) {
+        setcookie('userID', $usuario);
+        setcookie('rol', $row[1]);
+
+ }
   }
 ?>
 <!DOCTYPE html>
