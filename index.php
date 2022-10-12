@@ -6,7 +6,7 @@ $conn = mysqli_connect("localhost", "root", "Oracle50", "conexion");
 if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
-$password=$_POST["user"];
+$contrasena=$_POST["password"];
 $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
 
         $result = mysqli_query($conn, $sql);
