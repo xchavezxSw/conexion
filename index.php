@@ -8,20 +8,22 @@ if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
 $contrasena=$_POST["password"];
+$valid=0;
 $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role";
 
  if ($result = $mysqli -> query($sql)) {
   while ($row = $result -> fetch_row()) {
          setcookie('userID', $usuario);
         setcookie('rol', $row[1]);
-
+    $valid=1;
   }
   $result -> free_result();
 }
 
 $mysqli -> close();
-
-
+if ($valid==1){
+    header('Location: http://conexion.techne.net.ar/conexion/pages/home.html');
+}
 
   }
 ?>
