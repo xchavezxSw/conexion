@@ -7,10 +7,10 @@ if (isset($_POST["user"]))
 {
 $usuario=$_POST["user"];
 $contrasena=$_POST["password"];
-$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') limit 1 group by role;";
+$sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and trim(password)=trim('$contrasena') group by role;";
 
         $result = mysqli_query($conn, $sql);
-        $row = mysql_fetch_row($result);
+        $row = mysql_fetch_array($result);
         if (mysqli_num_rows($result) === 1) {
         setcookie('userID', $usuario);
         setcookie('rol', $row[1]);
