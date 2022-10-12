@@ -1,8 +1,4 @@
-<?php
-echo isset($_SESSION['id']);
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-session_start();
- ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,10 +47,3 @@ session_start();
 
 </body>
 </html>
-<?php
-
-}else{
-header("Location: http://conexion.techne.net.ar/conexion/pages/home.html");
-exit();
-
-}
