@@ -2,10 +2,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-    host="127.0.0.1",
-    user="root",
-    password="Oracle50",
-    database="conexion"
 $conn = mysqli_connect("localhost", "root", "Oracle50", "conexion");
 echo $_POST['user'];
 ?>
