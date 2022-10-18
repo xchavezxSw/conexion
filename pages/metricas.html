@@ -80,10 +80,11 @@
 
         }
         userid=getCookie("userID")
+         rol=getCookie("rol")
     $(document).ready( function () {
         $('#metricas').DataTable({
       "ajax": {
-        "url": "https://conexion.techne.net.ar:80/getmetricas?usuario="+userid,
+        "url": "https://conexion.techne.net.ar:80/getmetricas?usuario="+userid+"&rol="+rol,
         dataSrc: '',
         columns: [
     { "data": "idbusqueda" },
