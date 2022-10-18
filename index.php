@@ -46,7 +46,7 @@ if ($valid==1){
     <nav class="">
       <div>
         <div>
-          <a href="index.html"><img class="classlogo" src="https://conexion-hr.com/wp-content/uploads/2022/01/conexion-hr-w-bb-300x47.png" alt="logo"></a>
+          <a href="index.php"><img class="classlogo" src="https://conexion-hr.com/wp-content/uploads/2022/01/conexion-hr-w-bb-300x47.png" alt="logo"></a>
         </div>
       </div>
     </nav>
