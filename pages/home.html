@@ -115,7 +115,7 @@
     const listadoBusquedas = document.getElementById('listadoBusquedas')
     let i = 0
 
-    fetch('http://181.13.244.170:5000/busquedasPrioritarias')
+    fetch('https://conexion.techne.net.ar:5000/busquedasPrioritarias')
         .then( (resp) => resp.json())
         .then( (data) => {
           data.forEach((post)=>{
@@ -1410,7 +1410,7 @@ data: {
 
   $.ajax({
           type: "get",
-          url: "http://conexion.techne.net.ar:5000/getcookie",
+          url: "https://conexion.techne.net.ar:5000/getcookie",
           success:function(data){
             console.log(data)
             $('#bienvenido').val('Bienvenido');

@@ -22,7 +22,7 @@ $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and 
 
 $mysqli -> close();
 if ($valid==1){
-    header('Location: http://conexion.techne.net.ar/conexion/pages/home.html');
+    header('Location: https://conexion.techne.net.ar/conexion/pages/home.html');
 }
 
   }
