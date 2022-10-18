@@ -75,7 +75,7 @@
     <script>
             $('#tableInfRevisar').DataTable({
             ajax: {
-                "url":'http://181.13.244.170:5000/getInformesArevisar',
+                "url":'https://conexion.techne.net.ar:80/getInformesArevisar',
                 dataSrc: '',
             columns: [
                 { "data": 'Nombre y Apellido del Candidato' },
@@ -112,7 +112,7 @@
                let td= $(this).closest("tr")   // Finds the closest row <tr>
                        .find("td")
                 $.ajax({type: "POST",
-        url: "http://181.13.244.170:5000/revisarAprobado",
+        url: "https://conexion.techne.net.ar:80/revisarAprobado",
 	data: { 
         stEnBaseInf:td[1].textContent,
         emailInf:td[2].textContent,        
@@ -162,7 +162,7 @@ $(document).ready(function () {
                        .find("td")     // Gets a descendent with class="nr"
 
                 $.ajax({type: "POST",
-        url: "http://181.13.244.170:5000/revisarAprobado",
+        url: "https://conexion.techne.net.ar:80/revisarAprobado",
 	data: { 
         stEnBaseInf:td[1].textContent,
         emailInf:td[2].textContent,        

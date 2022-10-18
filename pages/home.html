@@ -753,7 +753,7 @@ aria-hidden="true">
 $("#emailCandidatoSt").focusout(function() {
       $.ajax({
               type: "POST",
-              url: "http://181.13.244.170:5000/getCambioEstado",
+              url: "https://conexion.techne.net.ar:80/getCambioEstado",
               data: {
                 emailCandidatoSt: $("#emailCandidatoSt").val(),
                 idSt: $("#idSt").val()
@@ -810,7 +810,7 @@ $("#statusS3St").change(function() {
 $("#email").change(function() {
       $.ajax({
               type: "POST",
-              url: "http://181.13.244.170:5000/getPermitido",
+              url: "https://conexion.techne.net.ar:80/getPermitido",
               data: {
                     email: $("#email").val()
               },
@@ -847,7 +847,7 @@ var anterior="";
  $("#emailCandidato").focusout(function() {
 
         $.ajax({type: "POST",
-                url: "http://181.13.244.170:5000/Getreservas",
+                url: "https://conexion.techne.net.ar:80/Getreservas",
                 data: {
                         emailCandidato: $("#emailCandidato").val()
                       },
@@ -919,7 +919,7 @@ var anterior="";
      if (anterior=="" && $("#EMailCandidatoInf").val() != "")
      {
         $.ajax({type: "POST",
-                url: "http://181.13.244.170:5000/Getreservas",
+                url: "https://conexion.techne.net.ar:80/Getreservas",
                 data: {
                         emailCandidato: $("#EMailCandidatoInf").val()
                       },
@@ -990,7 +990,7 @@ var anterior="";
        {
         anterior=actual;
         $.ajax({type: "POST",
-                url: "http://181.13.244.170:5000/Getreservas",
+                url: "https://conexion.techne.net.ar:80/Getreservas",
 	            data: {
                     emailCandidato: $("#EMailCandidatoInf").val()
                       },
@@ -1121,7 +1121,7 @@ if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val
     tperfil.push(valoresperfil[i].textContent);
     }
     $.ajax({type: "POST",
-        url: "http://181.13.244.170:5000/insert",
+        url: "https://conexion.techne.net.ar:80/insert",
 	data: { 
           email: $("#email").val(), 
           emailCandidato: $("#emailCandidato").val(),
@@ -1230,7 +1230,7 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
     tperfil.push(valoresperfil[i].textContent);
     }
     $.ajax({type: "POST",
-        url: "http://181.13.244.170:5000/solicitudInforme",
+        url: "https://conexion.techne.net.ar:80/solicitudInforme",
 	data: { 
           emailInf: $("#EmailInf").val(), 
           emailCandidatoInf: $("#EMailCandidatoInf").val(),
@@ -1339,7 +1339,7 @@ if ( $("#EMailCandidatoInf").val()!= "")
 $("#confirmar").on("click", function(e) {
 
 $.ajax({type: "POST",
-      url: "http://181.13.244.170:5000/cambioEstado",
+      url: "https://conexion.techne.net.ar:80/cambioEstado",
 data: { 
       emailSt: $('#emailSt').val(),
       emailCandidatoSt: $('#emailCandidatoSt').val(),
@@ -1437,13 +1437,13 @@ $('#metricas').hide();
 }
 if (document.cookie ==='')
 {
-location.href='http://conexion.techne.net.ar/conexion/'
+location.href='https://conexion.techne.net.ar/conexion/'
 }
 
 
 $("#singOffAndButton").on("click", function(e) {
 document.cookie='';
-location.href='http://conexion.techne.net.ar/conexion/';
+location.href='https://conexion.techne.net.ar/conexion/';
 })
 </script>
 
