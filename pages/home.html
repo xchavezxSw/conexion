@@ -103,11 +103,12 @@
       </div>
     </div>
   </div>
+  <!--
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner" id="listadoBusquedas">
       <h3 class="h3busq">Búsquedas de alta prioridad</h3>
     </div>
-  </div>
+  </div>-->
   <footer class="footer">
     <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
   </footer>
@@ -1436,6 +1437,12 @@ data: {
 if (getCookie("rol")==="BO"){
 $('#miscandidatos').hide();
 $('#ba').hide();
+$('#metricas').hide();
+}
+if (getCookie("rol")==="red"){
+$('#miscandidatos').hide();
+$('#ba').hide();
+$('#cambioestados').hide();
 $('#metricas').hide();
 }
 if (getCookie("rol")==="tr"){
