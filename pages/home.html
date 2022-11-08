@@ -619,7 +619,7 @@
       <a  class="btn-informes" href="./enCliente.html">En cliente</a>
       <a  class="btn-informes" href="./reservados.html">Reservados</a>
       <a  class="btn-informes" href="./ingresosConfirmados.html">Ingresos confirmados</a>
-      <a  class="btn-informes" href="./tablaInformes.html">Informes a revisar</a>
+      <a id="revisar" class="btn-informes" href="./tablaInformes.html">Informes a revisar</a>
       <div class="modal-footer">
         <button type="button"  class="cierro" data-dismiss="modal">Cerrar</button>
       </div>
@@ -1444,11 +1444,13 @@ $('#miscandidatos').hide();
 $('#ba').hide();
 $('#cambioestados').hide();
 $('#metricas').hide();
+$('#revisar').hide();
 }
 if (getCookie("rol")==="tr"){
 //$('#cambioestados').hide();
 $('#ba').hide();
 $('#metricas').hide();
+$('#revisar').hide();
 }
 if (document.cookie ==='')
 {
