@@ -1452,6 +1452,12 @@ $('#ba').hide();
 $('#metricas').hide();
 $('#revisar').hide();
 }
+if (getCookie("rol")==="inhouse"){
+$('#ba').hide();
+$('#metricas').hide();
+$('#revisar').hide();
+}
+
 if (document.cookie ==='')
 {
 location.href='https://conexion.techne.net.ar/conexion/'
