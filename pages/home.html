@@ -902,9 +902,13 @@ var anterior="";
                   }
                     },
                 error:function(result) {
-                   console.log(result['responseJSON'])
+                   if (result['responseJSON']=='510'){
+                   texto='El candidato esta reservado o en pertencia con otro reclutador'
+                   }else{
+                   texto="El candidato fue contratado con anterioridad."
+                    }
                   Toastify({
-                    text: "El candidato fue contratado con anterioridad.",
+                    text: texto,
                     duration: 3000,
                     newWindow: true,
                     close: true,
