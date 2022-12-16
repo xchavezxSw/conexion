@@ -854,7 +854,9 @@ var anterior="";
         $.ajax({type: "POST",
                 url: "https://conexion.techne.net.ar:80/Getreservas",
                 data: {
-                        emailCandidato: $("#emailCandidato").val()
+                        emailCandidato: $("#emailCandidato").val(),
+                        email:$("#email").val(),
+
                       },
                 statusCode: {
                   502: function(xhr) {
@@ -931,7 +933,8 @@ var anterior="";
         $.ajax({type: "POST",
                 url: "https://conexion.techne.net.ar:80/Getreservas",
                 data: {
-                        emailCandidato: $("#EMailCandidatoInf").val()
+                        emailCandidato: $("#EMailCandidatoInf").val(),
+                        email: $("#EmailInf").val()
                       },
                 success:function(data) {
                   if (data.hasOwnProperty("datos")){
@@ -1002,7 +1005,8 @@ var anterior="";
         $.ajax({type: "POST",
                 url: "https://conexion.techne.net.ar:80/Getreservas",
 	            data: {
-                    emailCandidato: $("#EMailCandidatoInf").val()
+                    emailCandidato: $("#EMailCandidatoInf").val(),
+                    email: $("#EmailInf").val()
                       },
                       success:function(data) {
                       if (data.hasOwnProperty("datos")){
