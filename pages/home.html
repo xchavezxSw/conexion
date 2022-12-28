@@ -755,6 +755,28 @@ aria-hidden="true">
 </script>
 <script>
 
+var Base64File;
+const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+
+        fileReader.onload = () => {
+            resolve(fileReader.result);
+        };
+
+        fileReader.onerror = (error) => {
+            reject(error);
+        };
+    });
+};
+$("#cvesp").on("change", async function(e) {
+  
+  const file = event.target.files[0];
+  const base64 = await convertBase64(file);
+  Base64File = base64
+});
+
 $("#emailCandidatoSt").focusout(function() {
       $.ajax({
               type: "POST",
@@ -856,7 +878,6 @@ var anterior="";
                 data: {
                         emailCandidato: $("#emailCandidato").val(),
                         email:$("#email").val(),
-
                       },
                 statusCode: {
                   502: function(xhr) {
@@ -1135,7 +1156,7 @@ if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val
     tperfil.push(valoresperfil[i].textContent);
     }
     $.ajax({type: "POST",
-        url: "https://conexion.techne.net.ar:80/insert",
+       url: "https://conexion.techne.net.ar:80/insert",
 	data: { 
           email: $("#email").val(), 
           emailCandidato: $("#emailCandidato").val(),
@@ -1229,6 +1250,7 @@ $( "."+borrado ).remove();
 }
 
 $("#guardoInf").on("click", function(e) {
+    
 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf").val() ))
 {
@@ -1243,8 +1265,11 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     tperfil.push(valoresperfil[i].textContent);
     }
+
+
+
     $.ajax({type: "POST",
-        url: "https://conexion.techne.net.ar:80/solicitudInforme",
+         url: "https://conexion.techne.net.ar:80/solicitudInforme",
 	data: { 
           emailInf: $("#EmailInf").val(), 
           emailCandidatoInf: $("#EMailCandidatoInf").val(),
@@ -1258,7 +1283,7 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
           remuneracionPretendidaMensualInf : $("#RemuneracionPretendidaMensualInf").val(),
           niveldeInglesInf: $("#NiveldeInglesInf").val(),
           locacionInf: $("#LocacionInf").val(),
-          cvespInf: $("#cvesp").val(),
+          cvespInf: Base64File,
           informeEntEspInf: $("#informeEntEsp").val(),
           cvingInf: $("#cving").val(),
           informeEntIngInf: $("#informeEntIng").val(),
@@ -1471,10 +1496,10 @@ $('#metricas').hide();
 $('#revisar').hide();
 }
 
-if (document.cookie ==='')
-{
-location.href='https://conexion.techne.net.ar/conexion/'
-}
+// if (document.cookie ==='')
+// {
+// location.href='https://conexion.techne.net.ar/conexion/'
+// }
 
 
 $("#singOffAndButton").on("click", function(e) {
