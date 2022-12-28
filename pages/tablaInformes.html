@@ -75,7 +75,7 @@
     <script>
             $('#tableInfRevisar').DataTable({
             ajax: {
-                "url":'https://conexion.techne.net.ar:80/getInformesArevisar',
+                "url":'http://127.0.0.1:5000/getInformesArevisar',
                 dataSrc: '',
             columns: [
                 { "data": 'Nombre y Apellido del Candidato' },
@@ -99,18 +99,21 @@
                 { "data": 'Nivel de Ingles' },
                 { "data": 'Locación' },
                 { "data": 'Motivo Rechazo' },
-                { "data": "<input type='checkbox'/>" },
-
+                { "data": "<input type='checkbox'/>" }
             ]
             }
         });
     </script>
     <script>
 
+
+
         $(document).ready(function () {
             $('#tableInfRevisar tbody').on('click', 'td #aprobar', function () {
                let td= $(this).closest("tr")   // Finds the closest row <tr>
                        .find("td")
+                let input1= $(this).closest("tr")   // Finds the closest row <tr>
+                       .find("input")
                 $.ajax({type: "POST",
         url: "https://conexion.techne.net.ar:80/revisarAprobado",
 	data: { 
@@ -122,7 +125,7 @@
         tecCandiInf:td[6].textContent,        
         tPCandiInf:td[7].textContent,        
         lkCandiInf:td[8].textContent,        
-        comentInf:td[9].textContent,        
+        comentInf:input1[0].value,        
         cvEspInf:td[10].textContent,        
         infEntEsp:td[11].textContent,        
         cvIngInf:td[12].textContent,        
