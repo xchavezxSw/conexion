@@ -619,7 +619,7 @@
       <div class="modal-header">
         <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Informes</h4>
       </div>
-      <a  class="btn-informes" href="./misCandidatos.html">En cliente</a>
+      <a  class="btn-informes" href="./enCliente.html">En cliente</a>
       <a  class="btn-informes" href="./reservados.html">Reservados</a>
       <a  class="btn-informes" href="./ingresosConfirmados.html">Ingresos confirmados</a>
       <a id="revisar" class="btn-informes" href="./tablaInformes.html">Informes a revisar</a>
@@ -775,7 +775,6 @@ $("#cvesp").on("change", async function(e) {
   const file = event.target.files[0];
   const base64 = await convertBase64(file);
   Base64File = base64
-  console.log('en la funcion ',Base64File)
 });
 
 $("#emailCandidatoSt").focusout(function() {
@@ -879,7 +878,6 @@ var anterior="";
                 data: {
                         emailCandidato: $("#emailCandidato").val(),
                         email:$("#email").val(),
-
                       },
                 statusCode: {
                   502: function(xhr) {
@@ -1158,7 +1156,7 @@ if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val
     tperfil.push(valoresperfil[i].textContent);
     }
     $.ajax({type: "POST",
-        url: "http://127.0.0.1:8000/insert",
+       url: "https://conexion.techne.net.ar:80/insert",
 	data: { 
           email: $("#email").val(), 
           emailCandidato: $("#emailCandidato").val(),
@@ -1268,10 +1266,10 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
     tperfil.push(valoresperfil[i].textContent);
     }
 
-    console.log('Cuando guardo...',Base64File)
-    
+
+
     $.ajax({type: "POST",
-        url: "http://127.0.0.1:5000/solicitudInforme",
+         url: "https://conexion.techne.net.ar:80/solicitudInforme",
 	data: { 
           emailInf: $("#EmailInf").val(), 
           emailCandidatoInf: $("#EMailCandidatoInf").val(),
