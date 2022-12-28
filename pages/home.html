@@ -953,8 +953,13 @@ var anterior="";
                 error:function(result) {
                    if (result['responseJSON']=='510'){
                    texto='El candidato esta reservado o en pertencia con otro reclutador'
+                   $("#clear").click()
+                   $("#cierro").click()
                    }else{
                    texto="El candidato fue contratado con anterioridad."
+                   $("#clear").click()
+                   $("#cierro").click()
+
                     }
                   Toastify({
                     text: texto,
@@ -1134,7 +1139,10 @@ $("#clear").on("click", function(e) {
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
     valoresperfil[i].remove();
     }
-    
+ $("#EmailInf").val(decodeURIComponent(getCookie('userID')))
+$("#email").val(decodeURIComponent(getCookie('userID')))
+$("#email").prop("readonly", true);
+$("#EmailInf").prop("readonly", true);
  });
 
  $("#clearInf").on("click", function(e) {
@@ -1154,6 +1162,11 @@ $("#clear").on("click", function(e) {
         $("#NombreyApellidodelCandidatoInf").val('').prop("readonly", false);
         $("#LKCandiInf").val('').prop("readonly", false);
         $("#IdsaEnviarInf").val('').prop("readonly", false);
+        $("#EmailInf").val(decodeURIComponent(getCookie('userID')))
+$("#email").val(decodeURIComponent(getCookie('userID')))
+$("#email").prop("readonly", true);
+$("#EmailInf").prop("readonly", true);
+
 		     valores=document.querySelector('#minputInf').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
 	valores[i].remove();
