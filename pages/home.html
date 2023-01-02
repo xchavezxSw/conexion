@@ -283,9 +283,17 @@
                     </div>
          <div class="form-group">
                         <label >¿Es Sourcer?</label><br>
-                        <input type="radio" name="sourcer" id="EsSourceInf" value="Sí"> Si
-                        <input type="radio" name="sourcer" id="EsSourceInf" value="No"> No
+                        <select name="EsSourceInf" id="EsSourceInf">
+                          <option value="">Seleccionar...</option>
+                          <option style="padding: 10px;" value="Si">Si</option>
+                          <option style="padding: 10px;" value="No">No</option>
+                        </select>
                     </div>
+                    <div class="form-group sourEmail" id="sourEm" >
+                      <label >Sourcer email</label>
+                      <input id="sourcerEmail" type="email" class="form-control" placeholder="Escribir email">
+                      <small class="form-text text-muted">Sourcer email</small>
+                  </div>
                     <div class="form-group">
                       <label >ID</label>
                       <input id="IdsaEnviarInf" type="idReserva" class="form-control" placeholder="IDs a Enviar a Cliente separados con '_' y sin la palabra 'ID' y sin espacios">
@@ -619,10 +627,18 @@
       <div class="modal-header">
         <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Informes</h4>
       </div>
+<<<<<<< HEAD
       <a  class="btn-informes" href="./misCandidatos.html">En cliente</a>
       <a  class="btn-informes" href="./reservados.html">Reservados</a>
       <a  class="btn-informes" href="./ingresosConfirmados.html">Ingresos confirmados</a>
+=======
+      <a class="btn-informes" href="./enCliente.html">En cliente</a>
+      <a class="btn-informes" href="./reservados.html">Reservados</a>
+      <a class="btn-informes" href="./ingresosConfirmados.html">Ingresos confirmados</a>
+>>>>>>> a88ceec7f8c8408ebd073ddcbddae6516abad148
       <a id="revisar" class="btn-informes" href="./tablaInformes.html">Informes a revisar</a>
+      <a class="btn-informes" href="./fueradeproceso.html">Fuera de proceso</a>
+      <a class="btn-informes" href="./rechazados.html">Rechazados</a>
       <div class="modal-footer">
         <button type="button"  class="cierro" data-dismiss="modal">Cerrar</button>
       </div>
@@ -755,6 +771,20 @@ aria-hidden="true">
 <script src="../js/multi-input.js">
 </script>
 <script>
+
+$("#EsSourceInf").change(function() {
+      if(this.value==='Si'){
+        let se = document.getElementById('sourEm')
+        se.classList.remove('sourEmail')
+        
+      }
+      if(this.value==='No'){
+        let se = document.getElementById('sourEm')
+        se.classList.add('sourEmail')
+        
+      }
+})
+  
 
 var Base64File;
 var Base64FileInformeesp;
@@ -1314,6 +1344,7 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
           TpCandiInf: tperfil,
           commentInf: $("#CommentInf").val(),
           EsSourceInf: $("#EsSourceInf").val(),
+          sourcerEmail: $("#sourcerEmail").val(),
           remuneracionPretendidaMensualInf : $("#RemuneracionPretendidaMensualInf").val(),
           niveldeInglesInf: $("#NiveldeInglesInf").val(),
           locacionInf: $("#LocacionInf").val(),

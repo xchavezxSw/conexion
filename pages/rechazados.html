@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexion | Rechazados</title>
+    <link rel="shortcut icon" href="https://conexion-hr.com/wp-content/uploads/2022/04/conexion-hr-favicon.png" sizes="32x32">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link href="../css/bootstrap-sidebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+</head>
+<body class="bodyInformes">
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="navbar-header">
+              <a href="./home.html"><img class="logo" src="https://conexion-hr.com/wp-content/uploads/2022/01/conexion-hr-w-bb-300x47.png" alt="logo"></a>
+            </div>
+              <ul class="buttonOff">
+                <li class="dropdown singOffAndButtonOff">
+                   <a class="singOff" href="../index.php"><span class="glyphicon glyphicon-off" style="color: white;" aria-hidden="true"></span></a>
+                </li>
+              </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedorTabla">
+            <table id="tableRechazados" class="display tablaBusquedas">
+                <thead>
+                    <tr>
+                        <th style="text-align: center; background-color:#221969f7;" >ID</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Email</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Email candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Nombre y apellido del candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >ID reserva</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Linkedin</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Tecnologías que sabe el candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Tipo de perfil del candidato</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Motivo</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Status</th>
+                        <th style="text-align: center; background-color:#221969f7;" >Comentarios adicionales</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody class="dataCol">
+                    <tr>
+                        <td>Row 1 Data 1</td>
+                        <td>Row 1 Data 2</td>
+                        <td>Row 1 Data 2</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2 Data 1</td>
+                        <td>Row 2 Data 2</td>
+                        <td>Row 2 Data 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p style="color: white; text-align:center ">2022 ConexionHR sistema </p>
+      </footer>
+      <script>
+       function getCookie(name) {
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          const valor=parts.pop().split(';').shift();
+          if (Array.isArray(valor) )
+          {
+          return valor[0]
+            }else
+            {
+            return valor
+            }
+
+        }
+        userid=getCookie("userID")
+        $(document).ready( function () {
+            $('#tableRechazados').DataTable({
+          "ajax": {
+            "url": "URL A DEFINIR",
+            dataSrc: '',
+            columns: [
+        { "data": "" },
+        
+        ]
+          },
+         'columnDefs' : [
+
+        { 'visible': false, 'targets': [0] }
+    ]
+        
+        } )
+        } );
+        </script>
+</body>
+</html>
