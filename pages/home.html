@@ -1622,7 +1622,6 @@ data: {
 $("#EmailInf").val(decodeURIComponent(getCookie('userID')))
 $("#email").val(decodeURIComponent(getCookie('userID')))
 
-$("#sour").hide();
 if (getCookie("rol")==="BO"){
 $('#miscandidatos').hide();
 $('#ba').hide();
@@ -1635,17 +1634,20 @@ $('#ba').hide();
 $('#cambioestados').hide();
 $('#metricas').hide();
 $('#revisar').hide();
+$("#sour").hide();
 }
 if (getCookie("rol")==="tr"){
 $('#cambioestados').hide();
 $('#ba').hide();
 $('#metricas').hide();
 $('#revisar').hide();
+$("#sour").hide();
 }
 if (getCookie("rol")==="inhouse"){
 $('#ba').hide();
 $('#metricas').hide();
 $('#revisar').hide();
+$("#sour").hide();
 }
 
 // if (document.cookie ==='')
