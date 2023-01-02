@@ -1622,10 +1622,12 @@ data: {
 $("#EmailInf").val(decodeURIComponent(getCookie('userID')))
 $("#email").val(decodeURIComponent(getCookie('userID')))
 
+$("#sourcerModal").hide();
 if (getCookie("rol")==="BO"){
 $('#miscandidatos').hide();
 $('#ba').hide();
 $('#metricas').hide();
+$("#sourcerModal").show();
 }
 if (getCookie("rol")==="red"){
 $('#informes').hide();
