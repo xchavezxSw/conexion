@@ -34,16 +34,7 @@
                         <th style="text-align: center; background-color:#221969f7;" >ID</th>
                         <th style="text-align: center; background-color:#221969f7;" >Email</th>
                         <th style="text-align: center; background-color:#221969f7;" >Email candidato</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Nombre y apellido del candidato</th>
-                        <th style="text-align: center; background-color:#221969f7;" >ID reserva</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Linkedin</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Tecnologías que sabe el candidato</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Tipo de perfil del candidato</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Motivo</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Status</th>
-                        <th style="text-align: center; background-color:#221969f7;" >Comentarios adicionales</th>
-                        
-                        
+                        <th style="text-align: center; background-color:#221969f7;" >Rechazado</th>
                     </tr>
                 </thead>
                 <tbody class="dataCol">
@@ -82,16 +73,18 @@
         $(document).ready( function () {
             $('#tableFueraDeProceso').DataTable({
           "ajax": {
-            "url": "URL A DEFINIR",
+            "url": "https://conexion.techne.net.ar:80/getFueraDeProceso",
             dataSrc: '',
             columns: [
-        { "data": "" },
-        
+        { "data": "idbusqueda" },
+        { "data": "EmailAddres" },
+        { "data": "emailcandidato" },
+        { "data": "rechazado" }
         ]
           },
          'columnDefs' : [
 
-        { 'visible': false, 'targets': [0] }
+        { 'visible': false, 'targets': [] }
     ]
         
         } )
