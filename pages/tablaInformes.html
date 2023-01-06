@@ -42,6 +42,7 @@
                         <th class="tituloCol" >Qué perfil es el candidato?</th>
                         <th class="tituloCol" >LinkedIn del canditato (link)</th>
                         <th class="tituloCol" >Comentarios</th>
+                        <th class="tituloCol" >Revisión de comentario</th>
                         <th class="tituloCol" >CV Español candidato</th>
                         <th class="tituloCol" >Informe de entrevista Español candidato</th>
                         <th class="tituloCol" >CV Inglés candidato</th>
@@ -75,7 +76,7 @@
     <script>
             $('#tableInfRevisar').DataTable({
             ajax: {
-                "url":'https://conexion.techne.net.ar:80/getInformesArevisar',
+                "url":'http://127.0.0.1:5000/getInformesArevisar',
                 dataSrc: '',
             columns: [
                 { "data": 'Nombre y Apellido del Candidato' },
@@ -91,6 +92,7 @@
                 { "data": '¿Qué perfil es el Candidato?' },
                 { "data": 'Linkedin del Candidato (Link)' },
                 { "data": 'Comentarios' },
+                { "data": 'Comentario' },
                 { "data": 'CV Español Candidato' },
                 { "data": 'Informe de Entrevista Español Candidato' },
                 { "data": 'CV Inglés Candidato' },
@@ -115,7 +117,7 @@
                 let input1= $(this).closest("tr")   // Finds the closest row <tr>
                        .find("input")
                 $.ajax({type: "POST",
-        url: "https://conexion.techne.net.ar:80/revisarAprobado",
+        url: "http://127.0.0.1:5000/revisarAprobado",
 	data: { 
         stEnBaseInf:td[1].textContent,
         emailInf:td[2].textContent,        
@@ -125,7 +127,8 @@
         tecCandiInf:td[6].textContent,        
         tPCandiInf:td[7].textContent,        
         lkCandiInf:td[8].textContent,        
-        comentInf:input1[0].value,        
+        comentInf:td[9].textContent,        
+        comentRev:input1[0].value,        
         cvEspInf:td[10].textContent,        
         infEntEsp:td[11].textContent,        
         cvIngInf:td[12].textContent,        
@@ -163,9 +166,11 @@ $(document).ready(function () {
             $('#tableInfRevisar tbody').on('click', 'tr #rechazar', function () {
                 let td= $(this).closest("tr")   // Finds the closest row <tr>
                        .find("td")     // Gets a descendent with class="nr"
-
+                let input1= $(this).closest("tr")   // Finds the closest row <tr>
+                .find("input")
+                console.log(td)
                 $.ajax({type: "POST",
-        url: "https://conexion.techne.net.ar:80/revisarAprobado",
+        url: "http://127.0.0.1:5000/revisarAprobado",
 	data: { 
         stEnBaseInf:td[1].textContent,
         emailInf:td[2].textContent,        
@@ -176,6 +181,7 @@ $(document).ready(function () {
         tPCandiInf:td[7].textContent,        
         lkCandiInf:td[8].textContent,        
         comentInf:td[9].textContent,        
+        comentRev:input1[0].value,         
         cvEspInf:td[10].textContent,        
         infEntEsp:td[11].textContent,        
         cvIngInf:td[12].textContent,        
