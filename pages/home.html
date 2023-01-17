@@ -1634,7 +1634,10 @@ $('#ba').hide();
 $('#metricas').hide();
 $('#revisar').hide();
 }
-
+const rols = ["inhouse", "tr", "red", "BO"];
+    if (!rols.includes(getCookie("rol"))){
+     location.href='https://conexion.techne.net.ar/conexion/'
+    }
  if (document.cookie ==='')
  {
  location.href='https://conexion.techne.net.ar/conexion/'
