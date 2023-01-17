@@ -82,10 +82,13 @@
         $(document).ready( function () {
             $('#tableRechazados').DataTable({
           "ajax": {
-            "url": "https://conexion.techne.net.ar:80/enrechazados?usuario="+user_id,
+            "url": "https://conexion.techne.net.ar:80/enrechazados?usuario="+userid,
             dataSrc: '',
             columns: [
-        { "data": "" },
+         { "data": "email" },
+    { "data": "emailCandiato" },
+    { "data": "id" },
+    { "data": "id" },
         
         ]
           },
