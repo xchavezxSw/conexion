@@ -62,10 +62,18 @@
                     </div>
                   </div>
                 </div>
+                <div>
+                  <div class="panel panel-primary">
+                    <div class="panel-body text-center"  data-toggle="modal" data-target="#source"  >
+                      <span class="glyphicon glyphicon-list icon-big" aria-hidden="true"></span>
+                      <h3>Source</h3>
+                    </div>
+                  </div>
+                </div>
                 <div id="cambioestados">
                   <div class="panel panel-primary">
                     <div class="panel-body text-center"  data-toggle="modal" data-target="#cambioDeEstado"  >
-                      <span class="glyphicon
+                      <span class="glyphicon 
                       glyphicon glyphicon-hourglass icon-big" aria-hidden="true"></span>
                       <h3>Cambio estado</h3>
                     </div>
@@ -138,6 +146,44 @@
         }
   </script>
 
+
+<form class="modal fade" id="source" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-weight: bold; color:black" id="exampleModalLabel">Source</h4>
+      </div>
+      <div class="modal-body" style="color: black;">
+
+                    <div class="form-group">
+                        <label >Email candidato </label>
+                        <input type="email" class="form-control" id="emailCandidatoSc" placeholder="candidato@email.com">
+                        <small id="emailHelp" class="form-text text-muted">Email del candidato.</small>
+                    </div>
+                    <div class="form-group">
+                      <label >Email reclutador</label>
+                      <input type="email" class="form-control" id="emailReclutadorSc" placeholder="reclutador@email.com">
+                      <small id="emailHelp" class="form-text text-muted">Email del reclutador.</small>
+                  </div>
+                  <div class="form-group">
+                    <label >ID</label>
+                    <input type="number" class="form-control" id="idSc" placeholder="ID">
+                    <small id="emailHelp" class="form-text text-muted">Escribe el ID.</small>
+                </div>
+                <div class="form-group">
+                  <label >Email source</label>
+                  <input type="email" class="form-control" id="sourceSc" placeholder="source@email.com">
+                  <small id="emailHelp" class="form-text text-muted">Escribe el source email.</small>
+              </div>
+
+      <div class="modal-footer">
+        <button type="button" id="cierroSc" class="cierro" data-dismiss="modal">Cerrar</button>
+        <button type="button" id="guardoSc" class="guardo" data-dismiss="modal">Guardar</button>
+      </div>
+    </div>
+   </div>
+  </div>
+</form>
 
 
   <div class="modal fade" id="reserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -620,6 +666,7 @@
     </div>
   </div>
 </form>
+
 <div class="modal fade" id="tablasInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -765,6 +812,27 @@ aria-hidden="true">
 <script src="../js/multi-input.js">
 </script>
 <script>
+
+$("#guardoSc").on("click", function(){
+  $.ajax({
+    type:"POST",
+    url:"https://conexion.techne.net.ar:80/getcambiosource",
+    data:{
+      emailCandidatoSc: $("#emailCandidatoSc").val(),
+      emailReclutadorSc: $("#emailReclutadorSc").val(),
+      sourceSc: $("#sourceSc").val(),
+      idSc: $("#idSc").val(),
+    },
+    success:function(data){
+      $("#emailCandidatoSc").val(),
+      $("#emailReclutadorSc").val(),
+      $("#sourceSc").val(),
+      $("#idSc").val()
+    },
+    error:function(){}
+  })
+})
+
 
 $("#EsSourceInf").change(function() {
       if(this.value==='Si'){
