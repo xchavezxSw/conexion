@@ -62,7 +62,7 @@
                     </div>
                   </div>
                 </div>
-                <div>
+                <div id="sourceboton">
                   <div class="panel panel-primary">
                     <div class="panel-body text-center"  data-toggle="modal" data-target="#source"  >
                       <span class="glyphicon glyphicon-list icon-big" aria-hidden="true"></span>
@@ -1614,11 +1614,13 @@ $("#email").val(decodeURIComponent(getCookie('userID')))
 if (getCookie("rol")==="BO"){
 $('#miscandidatos').hide();
 $('#ba').hide();
+$('#sourceboton').hide();
 $('#metricas').hide();
 }
 if (getCookie("rol")==="red"){
 $('#informes').hide();
 $('#ba').hide();
+$('#sourceboton').hide();
 $('#cambioestados').hide();
 $('#metricas').hide();
 $('#revisar').hide();
@@ -1626,6 +1628,7 @@ $('#revisar').hide();
 if (getCookie("rol")==="tr"){
 $('#cambioestados').hide();
 $('#ba').hide();
+$('#sourceboton').hide();
 $('#metricas').hide();
 $('#revisar').hide();
 }

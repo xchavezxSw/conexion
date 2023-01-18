@@ -81,7 +81,7 @@
     color: white;
     border: none;
     border-radius: 10px;
-    font-size: 15px;    
+    font-size: 15px;
 }
 .guardo{
     margin-left: 5px;
@@ -110,14 +110,14 @@
     font-family: 'Ubuntu', sans-serif;
     position: relative;
     min-height: 85.6vh;
-    
+
 }
 .contenedorTabla{
     padding: 10px;
     margin-top: 90px;
     overflow-x: scroll;
     overflow-y: scroll;
-    max-height: 500px;
+    max-height: auto;
 }
 .tablaBusquedas{
     color: white;
@@ -223,5 +223,5 @@
         background-color: rgb(253, 251, 246);
         box-shadow: -1px 1px 10px 3px  white;
     }
-    
+
 }
