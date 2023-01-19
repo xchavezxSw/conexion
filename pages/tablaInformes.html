@@ -107,6 +107,88 @@
         });
     </script>
     <script>
+    valor=''
+        $(document).ready(function () {
+            $('#tableInfRevisar tbody').on('focusout', 'td #comentintern', function () {
+               let td= $(this).closest("tr")   // Finds the closest row <tr>
+                       .find("td")
+                let input1= $(this).closest("tr")   // Finds the closest row <tr>
+                       .find("input")
+
+                let td2= $(this).closest("tr").find("a")
+                valorcvEspInf=''
+                valorinformeesp=''
+                valorcvingInf=''
+                valorcvinformeing=''
+                td2.map( function() {
+                 str1=$(this).attr('href')
+                 if(str1.indexOf("cvespinf") != -1){
+                   valorcvEspInf=str1;
+                }
+                if(str1.indexOf("informeesp") != -1){
+                   valorinformeesp=str1;
+                }
+                if(str1.indexOf("cvingInf") != -1){
+                   valorcvingInf=str1;
+                }
+                if(str1.indexOf("informeing") != -1){
+                   valorcvinformeing=str1;
+                }
+
+
+                       }).get();
+
+                    if (!(valor==input1[1].value)){
+                    valor=input1[1].value;
+                      $.ajax({type: "POST",
+        url: "https://conexion.techne.net.ar:80/comentariointerno",
+	data: {
+        stEnBaseInf:td[1].textContent,
+        emailInf:td[2].textContent,
+        esSourceInf:td[3].textContent,
+        emailCandiInf:td[4].textContent,
+        idInf:td[5].textContent,
+        tecCandiInf:td[6].textContent,
+        tPCandiInf:td[7].textContent,
+        lkCandiInf:td[8].textContent,
+        comentInf:td[9].textContent,
+        comentRev:input1[0].value,
+        cvEspInf:valorcvEspInf,
+        infEntEsp:valorinformeesp,
+        cvIngInf:valorcvingInf,
+        infEntIng:valorcvEspInf,
+        remuneracionPretendida:td[15].textContent,
+        nivelInglesInf:td[16].textContent,
+        locacionInf:td[17].textContent,
+        nombreCandiInf:td[18].textContent,
+        motivoRechInf:td[19].textContent,
+        comentarioint:valor,
+        status:'True',
+       },
+        success: function(result){
+            Toastify({
+                    text: "comentario cargado con exito",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center",
+                    stopOnFocus: true,
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
+                $('#tableInfRevisar').DataTable().ajax.reload();
+                setInterval( function () {
+                    $('#tableInfRevisar').DataTable().ajax.reload(); // user paging is not reset on reload
+                    }, 30000 );
+            }
+        })
+
+                    }
+
+        })
+    })
 
 
 
@@ -168,7 +250,6 @@ $(document).ready(function () {
                        .find("td")     // Gets a descendent with class="nr"
                 let input1= $(this).closest("tr")   // Finds the closest row <tr>
                 .find("input")
-                console.log(td)
                 $.ajax({type: "POST",
         url: "https://conexion.techne.net.ar:80/revisarAprobado",
 	data: { 
