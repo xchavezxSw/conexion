@@ -828,6 +828,19 @@ $("#guardoSc").on("click", function(){
       $("#emailReclutadorSc").val(),
       $("#sourceSc").val(),
       $("#idSc").val()
+
+       Toastify({
+       text: "El source fue cargado con exito",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "center",
+                    stopOnFocus: true,
+                    style: {
+                      background: "#221969",
+                    },
+                  }).showToast();
     },
     error:function(){}
   })
