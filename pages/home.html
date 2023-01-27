@@ -95,6 +95,14 @@
                     </div>
                   </a>
                 </div>
+                <div id="informesARevisar">
+                  <a href="./tablaInformes.html" class="panel panel-primary"  style="text-decoration:none;">
+                    <div class="panel-body text-center">
+                      <span class="glyphicon glyphicon-list-alt icon-big" aria-hidden="true"></span>
+                      <h3>Backoffice</h3>
+                    </div>
+                  </a>
+                </div>
                 <div id="metricas">
                   <a href="./metricas.html" class="panel panel-primary" style="text-decoration:none;" >
                     <div class="panel-body text-center">
@@ -677,7 +685,6 @@
       <!--<a class="btn-informes" href="./enCliente.html">En cliente</a>
       <a class="btn-informes" href="./reservados.html">Reservados</a>-->
       <a class="btn-informes" href="./ingresosConfirmados.html">Ingresos confirmados</a>
-      <a id="revisar" class="btn-informes" href="./tablaInformes.html">Informes a revisar</a>
       <a class="btn-informes" href="./fueradeproceso.html">Fuera de proceso</a>
       <a class="btn-informes" href="./rechazados.html">Rechazados</a>
       <div class="modal-footer">
@@ -1656,13 +1663,13 @@ const rols = ["inhouse", "tr", "red", "BO","admin"];
     }
  if (document.cookie ==='')
  {
- location.href='https://conexion.techne.net.ar/conexion/'
+  location.href='https://conexion.techne.net.ar/conexion/'
  }
 
 
 $("#singOffAndButton").on("click", function(e) {
-document.cookie='';
-location.href='https://conexion.techne.net.ar/conexion/';
+  document.cookie='';
+  location.href='https://conexion.techne.net.ar/conexion/';
 })
 </script>
 
