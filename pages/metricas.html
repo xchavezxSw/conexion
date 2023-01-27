@@ -46,7 +46,7 @@
                         <th style="text-align: center; background-color:#221969f7;" >Reservado</th>
                         <th style="text-align: center; background-color:#221969f7;" >Status</th>
                         <th style="text-align: center; background-color:#221969f7;" >Informe</th>
-                       
+
                     </tr>
                 </thead>
                 <tbody class="dataCol">
@@ -82,10 +82,13 @@
         userid=getCookie("userID")
          rol=getCookie("rol")
     $(document).ready( function () {
+
         $('#metricas').DataTable({
+
       "ajax": {
         "url": "https://conexion.techne.net.ar:80/getmetricas?usuario="+userid+"&rol="+rol,
         dataSrc: '',
+        lengthMenu: [[100, "All", 50, 25], [100, "All", 50, 25]],
         columns: [
     { "data": "idbusqueda" },
     { "data": "EmailAddres" },
@@ -102,7 +105,8 @@
     { "data": "reservado" },
     { "data": "status" },
     { "data": "informe" },
-    ]
+    ],
+    responsive: true
       }
     
     } )
