@@ -1397,8 +1397,10 @@ $( "."+borrado ).remove();
 
 $("#guardoInf").on("click", function(e) {
     
+var idReservaInf = $("#IdsaEnviarInf").val();
+var idregex = /^[0-9_]+$/;
 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf").val() ))
+if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf").val() || idregex.test(idReservaInf)))
 {
     e.preventDefault();
     multiinput= Array();
@@ -1509,6 +1511,19 @@ else{
 if ( $("#EMailCandidatoInf").val()!= "")
   Toastify({
   text: "Ingresá un email válido",
+  duration: 3000,
+  newWindow: true,
+  close: true,
+  gravity: "top",
+  position: "center", 
+  stopOnFocus: true, 
+  style: {
+    background: "#221969",
+  },
+}).showToast();
+if (idReservaInf == null || idReservaInf.trim() == "" || !idregex.test(idReservaInf))
+  Toastify({
+  text: "Ingresá un id válido",
   duration: 3000,
   newWindow: true,
   close: true,
