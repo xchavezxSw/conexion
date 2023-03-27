@@ -131,14 +131,24 @@ class MultiInput extends HTMLElement {
       this._addItem(value);
     }
   }
-
   // Called when text is entered or keys pressed in the input element.
   _handleKeydown(event) {
     const itemToDelete = event.target.previousElementSibling;
     const value = this._input.value;
+    // Obtiene los valores de los items
+    const values = this.getValues();
+    const otrosExists = values.includes('Otros');
     // On Backspace, delete the div.item to the left of the input
     if (value ==='' && event.key === 'Backspace' && itemToDelete) {
       this._deleteItem(itemToDelete);
+    // Add a div.item when the "Enter" key is pressed,
+    // but only if the current value of the input is not empty
+    // Al presionar enter, si el valor es Otros,
+    // se agrega el valor del input
+    } else if (event.key === 'Enter' && value !== '') {
+      if (otrosExists) {
+        this._addItem(value);
+      }
     // Add a div.item, but only if the current value
     // of the input is an allowed value
     } else if (this._allowedValues.includes(value)) {
