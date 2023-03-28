@@ -1222,11 +1222,11 @@ $("#clear").on("click", function(e) {
 		    $("#comment").val("");
 		     valores=document.querySelector('#minput').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
-	valores[i].remove();
+	valores[i].click();
     }
     valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
-    valoresperfil[i].remove();
+    valoresperfil[i].click();
     }
  $("#EmailInf").val(decodeURIComponent(getCookie('userID')))
 $("#email").val(decodeURIComponent(getCookie('userID')))
@@ -1255,11 +1255,11 @@ $("#email").val(decodeURIComponent(getCookie('userID')))
 
 		     valores=document.querySelector('#minputInf').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
-	valores[i].remove();
+	valores[i].click();
     }
     valoresperfil=document.querySelector('#tinputInf').querySelectorAll(".item");
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
-    valoresperfil[i].remove();
+    valoresperfil[i].click();
     }
  });
 
@@ -1302,11 +1302,11 @@ if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val
 		    $("#lkCandi").val('');
     valores=document.querySelector('#minput').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
-	valores[i].remove();	     
+	valores[i].click();	     
     }
     valoresperfil=document.querySelector('#tinput').querySelectorAll(".item");
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
-    valoresperfil[i].remove();
+    valoresperfil[i].click();
     }
     Toastify({
           text: "¡Reservado exitosamente!",
@@ -1436,11 +1436,11 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
         $("#IdsaEnviarInf").val('').prop("readonly", false);
     valores=document.querySelector('#minputInf').querySelectorAll(".item");
     for ( var i = 0, l = valores.length; i < l; i++ ) {
-	valores[i].remove();	     
+	valores[i].click();	     
     }
     valoresperfil=document.querySelector('#tinputInf').querySelectorAll(".item");
     for ( var i = 0, l = valoresperfil.length; i < l; i++ ) {
-    valoresperfil[i].remove();
+    valoresperfil[i].click();
     }
     Toastify({
           text: "¡Informe cargado exitosamente!",
