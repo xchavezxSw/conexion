@@ -1052,7 +1052,7 @@ var anterior="";
   //------------------------------------------------------------
 
   $("#EMailCandidatoInf").focusout(function() {
-     if (anterior=="" && $("#EMailCandidatoInf").val() != "")
+     if ($("#EMailCandidatoInf").val() != "")
      {
         $.ajax({type: "POST",
                 url: "https://conexion.techne.net.ar:80/Getreservas",
