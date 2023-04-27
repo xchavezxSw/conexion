@@ -134,7 +134,7 @@
     const listadoBusquedas = document.getElementById('listadoBusquedas')
     let i = 0
 
-    fetch('https://conexion.techne.net.ar:80/busquedasPrioritarias')
+    fetch('http://200.58.106.162:5000/busquedasPrioritarias')
         .then( (resp) => resp.json())
         .then( (data) => {
           data.forEach((post)=>{
@@ -781,7 +781,7 @@ aria-hidden="true">
 $("#guardoSc").on("click", function(){
   $.ajax({
     type:"POST",
-    url:"https://conexion.techne.net.ar:80/getcambiosource",
+    url:"http://200.58.106.162:5000/getcambiosource",
     data:{
       emailCandidatoSc: $("#emailCandidatoSc").val(),
       emailReclutadorSc: $("#emailReclutadorSc").val(),
@@ -874,7 +874,7 @@ $("#informeEntIng").on("change", async function(e) {
 $("#emailCandidatoSt").focusout(function() {
       $.ajax({
               type: "POST",
-              url: "https://conexion.techne.net.ar:80/getCambioEstado",
+              url: "http://200.58.106.162:5000/getCambioEstado",
               data: {
                 emailCandidatoSt: $("#emailCandidatoSt").val(),
                 idSt: $("#idSt").val(),
@@ -935,7 +935,7 @@ $("#statusS3St").change(function() {
 $("#email").change(function() {
       $.ajax({
               type: "POST",
-              url: "https://conexion.techne.net.ar:80/getPermitido",
+              url: "http://200.58.106.162:5000/getPermitido",
               data: {
                     email: $("#email").val()
               },
@@ -974,7 +974,7 @@ var anterior="";
  $("#emailCandidato").focusout(function() {
 
         $.ajax({type: "POST",
-                url: "https://conexion.techne.net.ar:80/Getreservas",
+                url: "http://200.58.106.162:5000/Getreservas",
                 data: {
                         emailCandidato: $("#emailCandidato").val(),
                         email:$("#email").val(),
@@ -1057,7 +1057,7 @@ var anterior="";
      if ($("#EMailCandidatoInf").val() != "")
      {
         $.ajax({type: "POST",
-                url: "https://conexion.techne.net.ar:80/Getreservas",
+                url: "http://200.58.106.162:5000/Getreservas",
                 data: {
                         emailCandidato: $("#EMailCandidatoInf").val(),
                         email: $("#EmailInf").val()
@@ -1129,7 +1129,7 @@ var anterior="";
        {
         anterior=actual;
         $.ajax({type: "POST",
-                url: "https://conexion.techne.net.ar:80/Getreservas",
+                url: "http://200.58.106.162:5000/Getreservas",
 	            data: {
                     emailCandidato: $("#EMailCandidatoInf").val(),
                     email: $("#EmailInf").val()
@@ -1264,7 +1264,7 @@ if (testEmail.test($("#email").val()) || testEmail.test($("#emailCandidato").val
     tperfil.push(valoresperfil[i].textContent);
     }
     $.ajax({type: "POST",
-       url: "https://conexion.techne.net.ar:80/insert",
+       url: "http://200.58.106.162:5000/insert",
 	data: { 
           email: $("#email").val(), 
           emailCandidato: $("#emailCandidato").val(),
@@ -1379,7 +1379,7 @@ if (testEmail.test($("#EmailInf").val()) || testEmail.test($("#EMailCandidatoInf
 
 
     $.ajax({type: "POST",
-         url: "https://conexion.techne.net.ar:80/solicitudInforme",
+         url: "http://200.58.106.162:5000/solicitudInforme",
 	data: { 
           emailInf: $("#EmailInf").val(), 
           emailCandidatoInf: $("#EMailCandidatoInf").val(),
@@ -1511,7 +1511,7 @@ $("#sourEm").hide();
 $("#confirmar").on("click", function(e) {
 
 $.ajax({type: "POST",
-      url: "https://conexion.techne.net.ar:80/cambioEstado",
+      url: "http://200.58.106.162:5000/cambioEstado",
 data: { 
       emailSt: $('#emailSt').val(),
       emailCandidatoSt: $('#emailCandidatoSt').val(),
@@ -1582,7 +1582,7 @@ data: {
 
   $.ajax({
           type: "get",
-          url: "https://conexion.techne.net.ar:80/getcookie",
+          url: "http://200.58.106.162:5000/getcookie",
           success:function(data){
             console.log(data)
             $('#bienvenido').val('Bienvenido');
@@ -1640,17 +1640,17 @@ $('#revisar').hide();
 }
 const rols = ["inhouse", "tr", "red", "BO","admin"];
     if (!rols.includes(getCookie("rol"))){
-     location.href='https://conexion.techne.net.ar/conexion/'
+     location.href='http://200.58.106.162'
     }
  if (document.cookie ==='')
  {
-  location.href='https://conexion.techne.net.ar/conexion/'
+  location.href='http://200.58.106.162'
  }
 
 
 $("#singOffAndButton").on("click", function(e) {
   document.cookie='';
-  location.href='https://conexion.techne.net.ar/conexion/';
+  location.href='http://200.58.106.162';
 })
 </script>
 
