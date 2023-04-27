@@ -877,7 +877,9 @@ $("#emailCandidatoSt").focusout(function() {
               url: "https://conexion.techne.net.ar:80/getCambioEstado",
               data: {
                 emailCandidatoSt: $("#emailCandidatoSt").val(),
-                idSt: $("#idSt").val()
+                idSt: $("#idSt").val(),
+                emailSt: $("#emailSt").val()
+
               },
               success:function(data){
                 $("#emailSt").val(data[0][0]), 
