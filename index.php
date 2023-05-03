@@ -3,7 +3,7 @@
 // Guardar datos de sesión
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-$mysqli = new mysqli("localhost", "root", "Oracle50", "conexion");
+$mysqli = new mysqli("localhost", "conexion", "Oracle50", "conexion");
 
 if (isset($_POST["user"]))
 {
@@ -23,7 +23,7 @@ $sql = "select count(*) ,role from users where trim(email)=trim('$usuario') and 
 
 $mysqli -> close();
 if ($valid==1){
-        header('Location: https://conexion.techne.net.ar/conexion/pages/home.html');
+        header('Location: https://conexion-hr.com.ar/pages/home.html');
 }
 
   }

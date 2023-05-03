@@ -76,7 +76,7 @@
     <script>
             $('#tableInfRevisar').DataTable({
             ajax: {
-                "url":'https://conexion.techne.net.ar:80/getInformesArevisar',
+                "url":'https://conexion-hr.com.ar:80/getInformesArevisar',
                 dataSrc: '',
             columns: [
                 { "data": 'Nombre y Apellido del Candidato' },
@@ -141,7 +141,7 @@
                     if (!(valor==input1[1].value)){
                     valor=input1[1].value;
                       $.ajax({type: "POST",
-        url: "https://conexion.techne.net.ar:80/comentariointerno",
+        url: "https://conexion-hr.com.ar:80/comentariointerno",
 	data: {
         stEnBaseInf:td[1].textContent,
         emailInf:td[2].textContent,
@@ -199,7 +199,7 @@
                 let input1= $(this).closest("tr")   // Finds the closest row <tr>
                        .find("input")
                 $.ajax({type: "POST",
-        url: "https://conexion.techne.net.ar:80/revisarAprobado",
+        url: "https://conexion-hr.com.ar:80/revisarAprobado",
 	data: { 
         stEnBaseInf:td[1].textContent,
         emailInf:td[2].textContent,        
@@ -251,7 +251,7 @@ $(document).ready(function () {
                 let input1= $(this).closest("tr")   // Finds the closest row <tr>
                 .find("input")
                 $.ajax({type: "POST",
-        url: "https://conexion.techne.net.ar:80/revisarAprobado",
+        url: "https://conexion-hr.com.ar:80/revisarAprobado",
 	data: { 
         stEnBaseInf:td[1].textContent,
         emailInf:td[2].textContent,        
